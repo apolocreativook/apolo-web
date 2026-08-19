@@ -18,9 +18,9 @@ exports.handler = async function(event) {
           }
         ],
         back_urls: {
-          success: "https://tu-sitio.netlify.app/",
-          failure: "https://tu-sitio.netlify.app/",
-          pending: "https://tu-sitio.netlify.app/"
+          success: "https://apolocreativo.netlify.app/",
+          failure: "https://apolocreativo.netlify.app/",
+          pending: "https://apolocreativo.netlify.app/"
         },
         auto_return: "approved"
       })
