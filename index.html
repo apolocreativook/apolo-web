@@ -1364,6 +1364,7 @@ async function prepareOrder(){
     paymentButton.href = result.init_point;
     paymentButton.textContent = "Pagar con Mercado Pago";
     paymentButton.style.pointerEvents = "auto";
+    window.open(result.init_point, "_blank");
 
     const qrBox = document.getElementById("qrBox");
     qrBox.innerHTML = "";
