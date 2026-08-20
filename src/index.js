@@ -27,7 +27,15 @@ export default {
                   currency_id: "ARS"
                 }
               ],
-              external_reference: data.orderId
+              external_reference: data.orderId,
+
+back_urls: {
+  success: "https://apolo-web.apolocreativo-ok.workers.dev/?pago=aprobado",
+  failure: "https://apolo-web.apolocreativo-ok.workers.dev/?pago=fallido",
+  pending: "https://apolo-web.apolocreativo-ok.workers.dev/?pago=pendiente"
+},
+
+auto_return: "approved"
             })
           }
         );
