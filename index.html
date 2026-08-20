@@ -588,7 +588,7 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
           <button class="btn btn-primary" style="width:100%;margin-top:20px" onclick="prepareOrder()">Continuar al pago</button>
           <div style="margin-top:12px;text-align:center;color:#88828e;font-size:.72rem;line-height:1.5">
   💳 Las compras realizadas online mediante Mercado Pago
-  incluyen un <strong style="color:var(--gold-light)">15% de costo de servicio</strong>.
+  incluyirán un <strong style="color:var(--gold-light)">porcentaje según el medio de pago que se elija</strong>.
 </div>
 
           <div class="ticket-status" id="ticketStatus">
@@ -1299,8 +1299,7 @@ function updateTicketSummary(){
   document.getElementById("summaryQty").textContent = currentQty + (currentQty===1 ? " entrada" : " entradas");
   
 const subtotal = selectedFunction.price * currentQty;
-const serviceFee = subtotal * SERVICE_FEE;
-const total = subtotal + serviceFee;
+const total = subtotal;
 
 document.getElementById("summarySubtotal").textContent = money(subtotal);
 document.getElementById("summaryServiceFee").textContent = money(serviceFee);
@@ -1318,10 +1317,9 @@ function changeQty(delta){
 async function prepareOrder(){
   if(!selectedProduction || !selectedFunction) return;
 
-  const subtotal = selectedFunction.price * currentQty;
-  const serviceFee = subtotal * SERVICE_FEE;
-  const total = subtotal + serviceFee;
-  const orderId = "APOLO-" + Date.now().toString(36).toUpperCase();
+const subtotal = selectedFunction.price * currentQty;
+const total = subtotal;
+const orderId = "APOLO-" + Date.now().toString(36).toUpperCase();
 
   document.getElementById("orderDetails").innerHTML = `
     <div class="summary-main">${escapeHtml(selectedProduction.title)}</div>
