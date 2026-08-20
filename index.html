@@ -1584,5 +1584,22 @@ setTimeout(()=>{
   }
 },4000); 
 </script>
+  <script>
+(function () {
+    const params = new URLSearchParams(window.location.search);
+
+    const status = params.get("status");
+    const paymentId = params.get("payment_id");
+    const externalReference = params.get("external_reference");
+
+    if (status === "approved") {
+        alert(
+            "¡Pago aprobado! 🎉\n\n" +
+            "Número de operación: " + (paymentId || "No disponible") +
+            "\nReferencia: " + (externalReference || "No disponible")
+        );
+    }
+})();
+</script>
 </body>
 </html>
