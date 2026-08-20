@@ -1319,48 +1319,74 @@ function changeQty(delta){
   updateTicketSummary();
 }
 
-function prepareOrder(){
+async function prepareOrder(){
   if(!selectedProduction || !selectedFunction) return;
 
-const subtotal = selectedFunction.price * currentQty;
-const serviceFee = subtotal * SERVICE_FEE;
-const total = subtotal + serviceFee;
+  const subtotal = selectedFunction.price * currentQty;
+  const serviceFee = subtotal * SERVICE_FEE;
+  const total = subtotal + serviceFee;
   const orderId = "APOLO-" + Date.now().toString(36).toUpperCase();
 
-document.getElementById("orderDetails").innerHTML = `
-  <div class="summary-main">${escapeHtml(selectedProduction.title)}</div>
-  <div class="summary-line">${escapeHtml(selectedFunction.dateLabel)} · ${escapeHtml(selectedFunction.time)}</div>
-  <div class="summary-line">${currentQty} ${currentQty===1?"entrada":"entradas"} · Subtotal: ${money(subtotal)}</div>
-  <div class="summary-line">Costo de servicio web (15%): ${money(serviceFee)}</div>
-  <div class="summary-line"><strong>Total a pagar: ${money(total)}</strong></div>
-  <div class="summary-line">${escapeHtml(selectedFunction.venue)}</div>
-`;
+  document.getElementById("orderDetails").innerHTML = `
+    <div class="summary-main">${escapeHtml(selectedProduction.title)}</div>
+    <div class="summary-line">${escapeHtml(selectedFunction.dateLabel)} · ${escapeHtml(selectedFunction.time)}</div>
+    <div class="summary-line">${currentQty} ${currentQty===1?"entrada":"entradas"} · Subtotal: ${money(subtotal)}</div>
+    <div class="summary-line">Costo de servicio web (15%): ${money(serviceFee)}</div>
+    <div class="summary-line"><strong>Total a pagar: ${money(total)}</strong></div>
+    <div class="summary-line">${escapeHtml(selectedFunction.venue)}</div>
+  `;
 
   const paymentButton = document.getElementById("paymentButton");
-  paymentButton.href = selectedFunction.paymentLink;
 
-  const qrBox = document.getElementById("qrBox");
-  qrBox.innerHTML = "";
+  paymentButton.textContent = "Generando pago...";
+  paymentButton.style.pointerEvents = "none";
 
-  /*
-    IMPORTANTE:
-    El QR actual contiene el link de Mercado Pago configurado.
-    En la versión final con backend, este QR debería contener
-    una URL única del ticket/orden, no solamente el link de pago.
-  */
-  if(typeof QRCode !== "undefined"){
-    new QRCode(qrBox,{
-      text:selectedFunction.paymentLink,
-      width:180,
-      height:180,
-      colorDark:"#111111",
-      colorLight:"#ffffff"
+  try {
+
+    const response = await fetch("/.netlify/functions/crear-pago", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: `${selectedProduction.title} - ${currentQty} entrada${currentQty === 1 ? "" : "s"}`,
+        amount: total,
+        orderId: orderId
+      })
     });
-  }
 
-  document.getElementById("ticketId").textContent = "ORDEN " + orderId;
-  document.getElementById("ticketStatus").classList.add("show");
-  document.getElementById("ticketStatus").scrollIntoView({behavior:"smooth",block:"center"});
+    const result = await response.json();
+
+    if(!response.ok || !result.init_point){
+      throw new Error(result.error || "No se pudo generar el pago.");
+    }
+
+    paymentButton.href = result.init_point;
+    paymentButton.textContent = "Pagar con Mercado Pago";
+    paymentButton.style.pointerEvents = "auto";
+
+    const qrBox = document.getElementById("qrBox");
+    qrBox.innerHTML = "";
+
+    if(typeof QRCode !== "undefined"){
+      new QRCode(qrBox,{
+        text: result.init_point,
+        width: 180,
+        height: 180,
+        colorDark:"#111111",
+        colorLight:"#ffffff"
+      });
+    }
+
+  } catch(error) {
+
+    console.error("Error generando pago:", error);
+
+    paymentButton.textContent = "Error al generar el pago";
+    paymentButton.style.pointerEvents = "auto";
+
+    alert("No se pudo generar el pago con Mercado Pago. Por favor, intentá nuevamente.");
+  }
 }
 
 /* ACTORES */
