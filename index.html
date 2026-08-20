@@ -1335,8 +1335,8 @@ const orderId = "APOLO-" + Date.now().toString(36).toUpperCase();
 
   try {
 
-    const response = await fetch("/.netlify/functions/crear-pago", {
-      method: "POST",
+const response = await fetch("/api/crear-pago", {
+  method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
