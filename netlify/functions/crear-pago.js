@@ -27,7 +27,8 @@ exports.handler = async function(event) {
     });
 
     const result = await response.json();
-
+console.log("Mercado Pago status:", response.status);
+console.log("Mercado Pago response:", result);
     if (!response.ok) {
       return {
         statusCode: response.status,
