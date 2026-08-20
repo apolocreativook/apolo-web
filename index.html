@@ -1330,8 +1330,7 @@ async function prepareOrder(){
     <div class="summary-main">${escapeHtml(selectedProduction.title)}</div>
     <div class="summary-line">${escapeHtml(selectedFunction.dateLabel)} · ${escapeHtml(selectedFunction.time)}</div>
     <div class="summary-line">${currentQty} ${currentQty===1?"entrada":"entradas"} · Subtotal: ${money(subtotal)}</div>
-    <div class="summary-line">Costo de servicio web (15%): ${money(serviceFee)}</div>
-    <div class="summary-line"><strong>Total a pagar: ${money(total)}</strong></div>
+<div class="summary-line"><strong>Total a pagar: ${money(total)}</strong></div>
     <div class="summary-line">${escapeHtml(selectedFunction.venue)}</div>
   `;
 
