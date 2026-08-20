@@ -18,6 +18,7 @@ exports.handler = async function(event) {
           }
         ],
         external_reference: data.orderId || "",
+        notification_url: "https://apolocreativo.netlify.app/.netlify/functions/mercadopago-webhook",
         back_urls: {
           success: "https://apolocreativo.netlify.app/",
           failure: "https://apolocreativo.netlify.app/",
