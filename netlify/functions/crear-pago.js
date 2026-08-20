@@ -17,6 +17,7 @@ exports.handler = async function(event) {
             unit_price: Number(data.amount)
           }
         ],
+        external_reference: data.orderId || "",
         back_urls: {
           success: "https://apolocreativo.netlify.app/",
           failure: "https://apolocreativo.netlify.app/",
