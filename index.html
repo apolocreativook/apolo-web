@@ -1584,7 +1584,7 @@ setTimeout(()=>{
   }
 },4000); 
 </script>
-  <script>
+<script>
 (function () {
     const params = new URLSearchParams(window.location.search);
 
@@ -1593,11 +1593,95 @@ setTimeout(()=>{
     const externalReference = params.get("external_reference");
 
     if (status === "approved") {
-        alert(
-            "¡Pago aprobado! 🎉\n\n" +
-            "Número de operación: " + (paymentId || "No disponible") +
-            "\nReferencia: " + (externalReference || "No disponible")
-        );
+
+        const mensaje = document.createElement("div");
+
+        mensaje.innerHTML = `
+            <div style="
+                position:fixed;
+                inset:0;
+                z-index:99999;
+                background:rgba(0,0,0,0.92);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:20px;
+                font-family:Arial,sans-serif;
+            ">
+                <div style="
+                    background:#111;
+                    color:white;
+                    width:100%;
+                    max-width:500px;
+                    border-radius:20px;
+                    padding:35px 25px;
+                    text-align:center;
+                    box-shadow:0 20px 60px rgba(0,0,0,.5);
+                ">
+
+                    <div style="
+                        font-size:60px;
+                        margin-bottom:15px;
+                    ">✅</div>
+
+                    <h2 style="
+                        margin:0 0 15px;
+                        font-size:28px;
+                    ">
+                        ¡Pago aprobado!
+                    </h2>
+
+                    <p style="
+                        font-size:17px;
+                        line-height:1.5;
+                        color:#ddd;
+                    ">
+                        Tu compra fue procesada correctamente.
+                    </p>
+
+                    <div style="
+                        background:#222;
+                        border-radius:12px;
+                        padding:15px;
+                        margin:20px 0;
+                        text-align:left;
+                        font-size:14px;
+                    ">
+                        <strong>Operación:</strong><br>
+                        ${paymentId || "No disponible"}
+                        <br><br>
+
+                        <strong>Referencia:</strong><br>
+                        ${externalReference || "No disponible"}
+                    </div>
+
+                    <p style="
+                        font-size:14px;
+                        color:#aaa;
+                    ">
+                        Guardá este número de operación como comprobante.
+                    </p>
+
+                    <button onclick="this.parentElement.parentElement.parentElement.remove()"
+                        style="
+                            margin-top:10px;
+                            padding:14px 25px;
+                            border:0;
+                            border-radius:10px;
+                            background:#fff;
+                            color:#111;
+                            font-size:16px;
+                            font-weight:bold;
+                            cursor:pointer;
+                        ">
+                        Continuar
+                    </button>
+
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(mensaje);
     }
 })();
 </script>
