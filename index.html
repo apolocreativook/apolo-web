@@ -143,6 +143,81 @@ h2{
 
 /* HORIZONTAL PRODUCTIONS */
 .production-list{display:grid;gap:18px}
+/* ORGANIZACIÓN DEL ARCHIVO DE PRODUCCIONES */
+
+.production-section{
+  margin-bottom:65px;
+}
+
+.production-section:last-child{
+  margin-bottom:0;
+}
+
+.production-section-title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);
+  margin-bottom:22px;
+  letter-spacing:-.03em;
+}
+
+.production-section-title .gold{
+  color:var(--gold-light);
+}
+
+.production-collapsible{
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  transition:max-height .7s ease, opacity .4s ease;
+}
+
+.production-collapsible.open{
+  max-height:10000px;
+  opacity:1;
+}
+
+.production-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  margin-top:22px;
+  padding:15px 20px;
+  border-radius:999px;
+  border:1px solid rgba(201,168,78,.35);
+  background:rgba(255,255,255,.025);
+  color:var(--gold-light);
+  font-weight:700;
+  font-size:.82rem;
+  transition:.25s;
+}
+
+.production-toggle:hover{
+  background:rgba(126,89,172,.12);
+  border-color:rgba(201,168,78,.6);
+  transform:translateY(-2px);
+}
+
+@media(max-width:620px){
+
+  .production-section{
+    margin-bottom:50px;
+  }
+
+  .production-section-title{
+    font-size:2rem;
+    margin-bottom:18px;
+  }
+
+  .production-toggle{
+    margin-top:18px;
+  }
+
+  .production-collapsible.open{
+    max-height:15000px;
+  }
+}
 .production-card{
   display:grid;grid-template-columns:38% 1fr;min-height:270px;
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
@@ -157,9 +232,15 @@ h2{
 .production-meta{color:var(--gold-light);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
 .production-content p{color:var(--muted);line-height:1.65;max-width:730px}
 .details{
-  max-height:0;overflow:hidden;transition:max-height .45s ease,margin-top .25s;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .6s ease, margin-top .25s;
 }
-.details.open{max-height:900px;margin-top:20px}
+
+.details.open{
+  max-height:5000px;
+  margin-top:20px;
+}
 .production-description{
   color:#c3bdca;
   line-height:1.7;
@@ -471,6 +552,192 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
   .footer-links{margin-top:20px}
   .form-row{grid-template-columns:1fr}
 }
+/* =====================================================
+   TRANSFERENCIA
+   ===================================================== */
+
+.transfer-section {
+  margin-top: 10px;
+}
+
+.transfer-box {
+  max-width: 900px;
+  margin: 30px auto 0;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  overflow: hidden;
+}
+
+.transfer-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 20px 24px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.25s ease;
+}
+
+.transfer-toggle:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.transfer-toggle span {
+  color: #d4af37;
+}
+
+.transfer-details {
+  display: none;
+  padding: 0 24px 28px;
+}
+
+.transfer-details.open {
+  display: block;
+}
+
+.transfer-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.transfer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.transfer-row > div {
+  min-width: 0;
+}
+
+.transfer-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.transfer-row strong {
+  font-size: 15px;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: transparent;
+  color: #d4af37;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #d4af37;
+  color: #111;
+}
+
+.transfer-instructions {
+  padding: 22px;
+  border-radius: 14px;
+  background: rgba(212, 175, 55, 0.055);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.transfer-instructions h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #d4af37;
+}
+
+.transfer-instructions p {
+  margin: 0 0 13px;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+.transfer-example {
+  padding: 14px 16px;
+  border-left: 3px solid #d4af37;
+  background: rgba(212, 175, 55, 0.06);
+  border-radius: 0 8px 8px 0;
+}
+
+.transfer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: #d4af37;
+  color: #111 !important;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.transfer-whatsapp:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .transfer-box {
+    border-radius: 14px;
+  }
+
+  .transfer-toggle {
+    padding: 18px;
+  }
+
+  .transfer-details {
+    padding: 0 15px 20px;
+  }
+
+  .transfer-row {
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .transfer-row strong {
+    font-size: 14px;
+  }
+
+  .copy-button {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+
+  .transfer-instructions {
+    padding: 18px;
+  }
+
+  .transfer-whatsapp {
+    width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -653,7 +920,114 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
     </div>
   </div>
 </section>
+<!-- TRANSFERENCIA -->
+<section class="section transfer-section" id="transferencia">
+  <div class="container">
 
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Abonar con transferencia</div>
+        <h2>Pagá tus entradas por transferencia</h2>
+      </div>
+
+      <p class="section-intro">
+        También podés abonar tus entradas mediante una transferencia directa.
+      </p>
+    </div>
+
+    <div class="transfer-box">
+
+      <button class="transfer-toggle" onclick="toggleTransfer(this)">
+        <span>＋ Descubrir datos</span>
+      </button>
+
+      <div class="transfer-details">
+
+        <div class="transfer-data">
+
+          <div class="transfer-row">
+            <div>
+              <span class="transfer-label">Alias</span>
+              <strong>apolo.creativo</strong>
+            </div>
+
+            <button class="copy-button" onclick="copyTransferData('apolo.creativo', this)">
+              Copiar
+            </button>
+          </div>
+
+          <div class="transfer-row">
+            <div>
+              <span class="transfer-label">CVU</span>
+              <strong>0000003100036611862098</strong>
+            </div>
+
+            <button class="copy-button" onclick="copyTransferData('0000003100036611862098', this)">
+              Copiar
+            </button>
+          </div>
+
+          <div class="transfer-row">
+            <div>
+              <span class="transfer-label">Titular</span>
+              <strong>Juan Manuel (Lolo) Ramos</strong>
+            </div>
+          </div>
+
+          <div class="transfer-row">
+            <div>
+              <span class="transfer-label">CUIL / CUIT</span>
+              <strong>20-34024409-6</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="transfer-instructions">
+
+          <h3>¿Qué hago después de transferir?</h3>
+
+          <p>
+            Una vez realizada la transferencia correspondiente a tus entradas,
+            escribinos por WhatsApp para enviarnos el comprobante y los nombres
+            de las personas que van a asistir.
+          </p>
+
+          <p>
+            Esto nos permite registrar correctamente tu compra y preparar tus
+            entradas para la función.
+          </p>
+
+          <p>
+            <strong>Importante:</strong> si no enviás el comprobante y los nombres
+            de los asistentes, las entradas se contabilizarán según el monto
+            recibido y quedarán registradas a nombre de la persona titular de
+            la cuenta desde la que se realizó la transferencia.
+          </p>
+
+          <p class="transfer-example">
+            <strong>Ejemplo:</strong> si se transfirió el importe correspondiente
+            a 2 entradas y la cuenta está a nombre de Juan Pérez, en boletería
+            deberán presentarse indicando <strong>Juan Pérez x 2</strong>.
+          </p>
+
+          <a
+            href="https://wa.me/5493517426042?text=13"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transfer-whatsapp"
+          >
+            💬 Enviar comprobante por WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <!-- ACTORES -->
 <section class="section" id="actores">
   <div class="container">
@@ -1211,60 +1585,267 @@ function escapeHtml(text){
 
 /* PRODUCCIONES */
 function renderProductions(){
+
   const box = document.getElementById("productionList");
-  box.innerHTML = allProductions.map((p,i)=>`
-    <article class="production-card">
-      <div class="production-img">
-        <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy">
-      </div>
-      <div class="production-content">
-        <div class="production-meta">${escapeHtml(p.meta)}</div>
-        <h3>${escapeHtml(p.title)}</h3>
-        <p>${escapeHtml(p.synopsis).replace(/\n\n/g, "<br><br>")}</p>
-        <button class="text-link" onclick="toggleDetails('prod-${i}',this)">＋ Más información</button>
-        <div class="details" id="prod-${i}">
-        <div class="production-description">
-  ${escapeHtml(p.description || "").replace(/\n\n/g, "<br><br>")}
-</div>
-          <div class="detail-grid">
-<div class="detail-box">
-    <strong>Estado</strong>
-    <span>${escapeHtml(p.estado || (p.functions.length ? "Entradas a la venta" : "Producción de archivo"))}</span>
-  </div>
 
-  <div class="detail-box">
-    <strong>Género</strong>
-    <span>${escapeHtml(p.genero || "Teatro")}</span>
-  </div>
+  const vigentesIds = [
+    "el-peor-evento",
+    "despues-de-vos"
+  ];
 
-  <div class="detail-box">
-    <strong>Duración</strong>
-    <span>${escapeHtml(p.duracion || "A confirmar")}</span>
-  </div>
+  const proximamenteIds = [
+    "un-domingo",
+    "un-macho",
+    "la-repartija",
+    "tetanic",
+    "error-1997",
+    "qepd"
+  ];
 
-  <div class="detail-box">
-    <strong>Sala</strong>
-    <span>${escapeHtml(p.sala || "A confirmar")}</span>
-  </div>
+  const archivoIds = [
+    "ultima-silla",
+    "el-casting"
+  ];
 
-  <div class="detail-box">
-    <strong>Dirección</strong>
-    <span>${escapeHtml(p.direccion || "Córdoba Capital")}</span>
-  </div>
+  const vigentes = allProductions.filter(p =>
+    vigentesIds.includes(p.id)
+  );
 
-  <div class="detail-box">
-    <strong>Entradas</strong>
-    <span>${escapeHtml(p.entradas || "Consultar")}</span>
-  </div>
-</div>
-          <div class="actor-mini-list">
-            ${p.actors.map(name=>`<div class="actor-mini"><img src="${actorPhoto(name)}" alt=""><span>${escapeHtml(name)}</span></div>`).join("")}
-          </div>
-          ${p.functions.length ? `<a class="btn btn-primary" href="#ticketera" style="display:inline-block;margin-top:17px;font-size:.78rem">Ver funciones</a>` : ""}
+  const proximamente = allProductions.filter(p =>
+    proximamenteIds.includes(p.id)
+  );
+
+  const archivo = allProductions.filter(p =>
+    archivoIds.includes(p.id)
+  );
+
+
+  function productionCard(p, i){
+
+    return `
+      <article class="production-card">
+
+        <div class="production-img">
+          <img
+            src="${p.image}"
+            alt="${escapeHtml(p.title)}"
+            loading="lazy"
+          >
         </div>
+
+        <div class="production-content">
+
+          <div class="production-meta">
+            ${escapeHtml(p.meta)}
+          </div>
+
+          <h3>
+            ${escapeHtml(p.title)}
+          </h3>
+
+          <p>
+            ${escapeHtml(p.synopsis).replace(/\n\n/g, "<br><br>")}
+          </p>
+
+          <button
+            class="text-link"
+            onclick="toggleDetails('prod-${p.id}-${i}',this)"
+          >
+            ＋ Más información
+          </button>
+
+          <div
+            class="details"
+            id="prod-${p.id}-${i}"
+          >
+
+            <div class="production-description">
+              ${escapeHtml(p.description || "").replace(/\n\n/g, "<br><br>")}
+            </div>
+
+            <div class="detail-grid">
+
+              <div class="detail-box">
+                <strong>Estado</strong>
+                <span>
+                  ${escapeHtml(
+                    p.estado ||
+                    (p.functions.length
+                      ? "Entradas a la venta"
+                      : "Producción de archivo")
+                  )}
+                </span>
+              </div>
+
+              <div class="detail-box">
+                <strong>Género</strong>
+                <span>
+                  ${escapeHtml(p.genero || "Teatro")}
+                </span>
+              </div>
+
+              <div class="detail-box">
+                <strong>Duración</strong>
+                <span>
+                  ${escapeHtml(p.duracion || "A confirmar")}
+                </span>
+              </div>
+
+              <div class="detail-box">
+                <strong>Sala</strong>
+                <span>
+                  ${escapeHtml(p.sala || "A confirmar")}
+                </span>
+              </div>
+
+              <div class="detail-box">
+                <strong>Dirección</strong>
+                <span>
+                  ${escapeHtml(p.direccion || "Córdoba Capital")}
+                </span>
+              </div>
+
+              <div class="detail-box">
+                <strong>Entradas</strong>
+                <span>
+                  ${escapeHtml(p.entradas || "Consultar")}
+                </span>
+              </div>
+
+            </div>
+
+            <div class="actor-mini-list">
+
+              ${p.actors.map(name => `
+                <div class="actor-mini">
+
+                  <img
+                    src="${actorPhoto(name)}"
+                    alt=""
+                  >
+
+                  <span>
+                    ${escapeHtml(name)}
+                  </span>
+
+                </div>
+              `).join("")}
+
+            </div>
+
+            ${
+              p.functions.length
+              ?
+              `
+                <a
+                  class="btn btn-primary"
+                  href="#ticketera"
+                  style="display:inline-block;margin-top:17px;font-size:.78rem"
+                >
+                  Ver funciones
+                </a>
+              `
+              :
+              ""
+            }
+
+          </div>
+
+        </div>
+
+      </article>
+    `;
+  }
+
+
+  function renderGroup(productions){
+    return productions
+      .map((p,i) => productionCard(p,i))
+      .join("");
+  }
+
+
+  box.innerHTML = `
+
+    <!-- FUNCIONES VIGENTES -->
+
+    <section class="production-section">
+
+      <div class="production-section-title">
+        Funciones <span class="gold">vigentes</span>
       </div>
-    </article>
-  `).join("");
+
+      <div class="production-list">
+        ${renderGroup(vigentes)}
+      </div>
+
+    </section>
+
+
+    <!-- PRÓXIMAMENTE -->
+
+    <section class="production-section">
+
+      <div class="production-section-title">
+        Próximos <span class="gold">estrenos</span>
+      </div>
+
+      <button
+        class="production-toggle"
+        onclick="toggleProductionSection('proximamenteProducciones', this)"
+      >
+        ＋ Conocer más
+      </button>
+
+      <div
+        class="production-collapsible"
+        id="proximamenteProducciones"
+      >
+
+        <div
+          class="production-list"
+          style="margin-top:22px"
+        >
+          ${renderGroup(proximamente)}
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DE ARCHIVO -->
+
+    <section class="production-section">
+
+      <div class="production-section-title">
+        De <span class="gold">archivo</span>
+      </div>
+
+      <button
+        class="production-toggle"
+        onclick="toggleProductionSection('archivoProducciones', this)"
+      >
+        ＋ Ver archivos
+      </button>
+
+      <div
+        class="production-collapsible"
+        id="archivoProducciones"
+      >
+
+        <div
+          class="production-list"
+          style="margin-top:22px"
+        >
+          ${renderGroup(archivo)}
+        </div>
+
+      </div>
+
+    </section>
+
+  `;
 }
 
 /* TICKETERA */
@@ -1427,6 +2008,30 @@ function toggleDetails(id,btn){
   el.classList.toggle("open");
   btn.textContent=el.classList.contains("open")?"− Ocultar información":"＋ Más información";
 }
+function toggleProductionSection(id,button){
+
+  const section = document.getElementById(id);
+
+  section.classList.toggle("open");
+
+  if(section.classList.contains("open")){
+
+    if(id === "proximamenteProducciones"){
+      button.textContent = "− Ocultar próximas producciones";
+    }else{
+      button.textContent = "− Ocultar archivos";
+    }
+
+  }else{
+
+    if(id === "proximamenteProducciones"){
+      button.textContent = "＋ Conocer más";
+    }else{
+      button.textContent = "＋ Ver archivos";
+    }
+
+  }
+}
 function toggleActor(i,btn){
   const el=document.getElementById("actor-"+i);
   el.classList.toggle("open");
@@ -1575,6 +2180,44 @@ setTimeout(()=>{
     intro.classList.add("hide");
   }
 },4000); 
+/* =====================================================
+   TRANSFERENCIA
+   ===================================================== */
+
+function toggleTransfer(button) {
+  const details = button.nextElementSibling;
+
+  details.classList.toggle("open");
+
+  if (details.classList.contains("open")) {
+    button.innerHTML = "<span>− Ocultar datos</span>";
+  } else {
+    button.innerHTML = "<span>＋ Descubrir datos</span>";
+  }
+}
+
+
+/* COPIAR ALIAS / CVU */
+
+function copyTransferData(text, button) {
+
+  navigator.clipboard.writeText(text).then(function() {
+
+    const originalText = button.textContent;
+
+    button.textContent = "✓ Copiado";
+
+    setTimeout(function() {
+      button.textContent = originalText;
+    }, 1800);
+
+  }).catch(function() {
+
+    alert("No se pudo copiar automáticamente. Copiá el dato manualmente.");
+
+  });
+
+}
 </script>
 <script>
 (function () {
