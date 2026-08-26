@@ -886,17 +886,22 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
           <div class="summary-line" id="summaryQty">—</div>
 
 <div style="margin-top:20px;padding-top:15px;border-top:1px solid var(--line)">
+
   <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin:6px 0">
     <span>Subtotal</span>
     <strong id="summarySubtotal">$ 0</strong>
   </div>
 
-
+  <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin:6px 0">
+    <span>Costo de servicio (15%)</span>
+    <strong id="summaryServiceFee">$ 0</strong>
+  </div>
 
   <div class="total" style="margin-top:15px">
     <span>Total</span>
     <strong id="summaryTotal">$ 0</strong>
   </div>
+
 </div>
 
 
@@ -1880,9 +1885,11 @@ function updateTicketSummary(){
   document.getElementById("summaryQty").textContent = currentQty + (currentQty===1 ? " entrada" : " entradas");
   
 const subtotal = selectedFunction.price * currentQty;
-const total = subtotal;
+const serviceFee = Math.round(subtotal * 0.15);
+const total = subtotal + serviceFee;
 
 document.getElementById("summarySubtotal").textContent = money(subtotal);
+document.getElementById("summaryServiceFee").textContent = money(serviceFee);
 document.getElementById("summaryTotal").textContent = money(total);
 }
 
@@ -1898,13 +1905,15 @@ async function prepareOrder(){
   if(!selectedProduction || !selectedFunction) return;
 
 const subtotal = selectedFunction.price * currentQty;
-const total = subtotal;
+const serviceFee = Math.round(subtotal * 0.15);
+const total = subtotal + serviceFee;
 const orderId = "APOLO-" + Date.now().toString(36).toUpperCase();
 
   document.getElementById("orderDetails").innerHTML = `
     <div class="summary-main">${escapeHtml(selectedProduction.title)}</div>
     <div class="summary-line">${escapeHtml(selectedFunction.dateLabel)} · ${escapeHtml(selectedFunction.time)}</div>
-    <div class="summary-line">${currentQty} ${currentQty===1?"entrada":"entradas"} · Subtotal: ${money(subtotal)}</div>
+<div class="summary-line">${currentQty} ${currentQty===1?"entrada":"entradas"} · Subtotal: ${money(subtotal)}</div>
+<div class="summary-line">Costo de servicio (15%): ${money(serviceFee)}</div>
 <div class="summary-line"><strong>Total a pagar: ${money(total)}</strong></div>
     <div class="summary-line">${escapeHtml(selectedFunction.venue)}</div>
   `;
