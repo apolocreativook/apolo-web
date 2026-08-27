@@ -1303,46 +1303,49 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
 
 /* PRODUCCIONES A LA VENTA */
 const ticketedProductions = [
-  {
-    id:"el-peor-evento",
-    title:"El Peor Evento del Año",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/lala1.png?raw=true",
-synopsis:"Una inauguración aparentemente perfecta se convierte en un desastre inesperado. Una comedia explosiva donde secretos, invitados y situaciones absurdas hacen que todo salga peor de lo imaginado.",
-      description:"Una inauguración que prometía ser una noche perfecta se transforma rápidamente en un verdadero desastre. Entre invitados inesperados, situaciones absurdas, secretos que salen a la luz y personajes que parecen empeñados en complicarlo todo, lo que debía ser una celebración termina convirtiéndose en una cadena de acontecimientos cada vez más descontrolados.\n\nUna comedia dinámica y explosiva sobre las apariencias, los vínculos y esas situaciones en las que todo puede salir mal al mismo tiempo. Porque cuando pensás que ya ocurrió lo peor… probablemente todavía falte lo peor del evento.",
 
-      estado:"Entradas a la venta",
+    {
+    id:"el-mecanico",
+    title:"El mecánico es mi novia",
+    image:"https://i.ibb.co/35DRzJxM/Whats-App-Image-2026-08-27-at-05-52-33.jpg?raw=true",
+synopsis:"Un viudo, una cita, una médium inexperta y un espíritu que no piensa quedarse afuera. Lo que debía ser una tranquila noche en casa se convierte en un enredo disparatado donde nada es lo que parece.",
+description:"“El Mecánico, es mi novia” es una comedia de enredos que transcurre en la casa de Hipólito, un oficinista viudo, tradicional y acostumbrado a una vida tranquila y ordenada.\n\nDespués de mucho tiempo, Hipólito tiene una cita con Barby, una compañera de trabajo a quien invita a pasar una noche juntos. Pero lo que parecía una velada romántica se transforma rápidamente en un verdadero caos cuando aparecen Basilio, su mejor amigo, y Copelia, una médium inexperta que intenta comunicarse con el más allá.\n\nA partir de ese momento, comienzan a desfilar por la casa una serie de personajes que complican cada vez más la situación, dando lugar a una historia llena de confusiones, secretos, apariciones y situaciones completamente desopilantes.\n\n",
+estado:"Entradas en venta",
   genero:"Comedia",
   duracion:"75 minutos",
   sala:"Sala 12",
-  direccion:"Santa Rosa 212, Córdoba",
-  entradas:"Desde $1.000",
-    meta:"Agosto · 2026",
+  direccion:"Santa Rosa 212",
+  entradas:"Desde $18.000",
+    meta:"06 de Septiembre",
     functions:[
+
       {
-        date:"2026-08-23",
-        dateLabel:"Domingo 23 de agosto",
+        date:"2026-09-06",
+        dateLabel:"Domingo 6 de Septiembre",
         time:"20:00 h",
         venue:"Teatro · Córdoba Capital",
-        price:1000,
+        price:18000,
         available:40,
         paymentLink:"https://link.mercadopago.com.ar/apolocreativo"
-      }
+      },
+
     ],
-    actors:["Lolo Ramos","Giuliano Costadone","Mariano Rosemberg","Carla Restivo","Mariana Guevara","Carolina Olmedo","Laura Charras","Lenny Carter","Natalia Trillo"]
+    actors:["En proceso","En proceso","En proceso","En proceso","En proceso","En proceso","En proceso","En proceso",]
   },
-  {
-    id:"despues-de-vos",
-    title:"Después de Vos",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/lala2.png?raw=true",
-synopsis:"Una historia de amor atravesada por el tiempo, los recuerdos y aquello que nunca pudimos decir. Una obra íntima sobre las personas que se van, pero que de alguna manera siempre permanecen.",
-description:"Después de Vos es una historia de amor atravesada por el paso del tiempo, las decisiones que tomamos y aquellas que dejamos pendientes. En un pequeño café de barrio, dos personas se encuentran frente a frente con los recuerdos de una relación que todavía parece tener algo pendiente por decir.\n\nEntre silencios, conversaciones, emociones y momentos compartidos, la obra propone una mirada íntima sobre el amor, la pérdida y la dificultad de aprender a continuar cuando una persona que fue importante ya no está. Porque algunas historias terminan, pero no necesariamente dejan de formar parte de nosotros.",
-estado:"Entradas a la venta",
+
+    {
+    id:"un-domingo",
+    title:"Un domingo insoportable",
+    image:"https://i.ibb.co/Nnt6XTDs/domingo.jpg?raw=true",
+synopsis:"Una reunión familiar que prometía ser tranquila termina convirtiéndose en un verdadero caos. Secretos, reproches y personalidades explosivas hacen de este cumpleaños un domingo imposible de olvidar.",
+description:"Una familia se reúne en una mansión para celebrar un cumpleaños que, en principio, debería ser una jornada tranquila y familiar. Pero cuando comienzan a aparecer viejos conflictos, secretos, reproches y personalidades difíciles de controlar, el encuentro rápidamente se convierte en un verdadero caos.\n\nUn Domingo Insoportable es una comedia familiar cargada de situaciones absurdas, discusiones y personajes que harán todo lo posible por sobrevivir a una celebración que parece no tener fin. Porque cuando se junta toda la familia, nunca se sabe quién puede terminar perdiendo la paciencia primero.",
+estado:"Entradas en venta",
   genero:"Comedia",
-  duracion:"60 minutos",
-  sala:"Sala 12",
-  direccion:"Santa Rosa 212, Córdoba",
+  duracion:"75 minutos",
+  sala:"A confirmar",
+  direccion:"A confirmar",
   entradas:"Desde $18.000",
-    meta:"Octubre · 2026",
+    meta:"04 y 11 de Octubre",
     functions:[
 
       {
@@ -1364,33 +1367,34 @@ estado:"Entradas a la venta",
         paymentLink:"https://link.mercadopago.com.ar/apolocreativo"
       }
     ],
-    actors:["Giuliano Costadone","Lenny Carter","Lolo Ramos","En proceso","En proceso"]
-  }
+    actors:["Claudia Moreschi","Natalia Trillo","Clara Segura","Lenny Carter","Giuliano Costadone","Lolo Ramos","Carolina Olmedo","En proceso"]
+  },
+
 ];
 
 /* TODAS LAS OBRAS DEL ARCHIVO */
 const allProductions = [
   ...ticketedProductions,
   {
-    id:"un-domingo",
-    title:"Un domingo insoportable",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/lala3.png?raw=true",
-synopsis:"Una reunión familiar que prometía ser tranquila termina convirtiéndose en un verdadero caos. Secretos, reproches y personalidades explosivas hacen de este cumpleaños un domingo imposible de olvidar.",
-description:"Una familia se reúne en una mansión para celebrar un cumpleaños que, en principio, debería ser una jornada tranquila y familiar. Pero cuando comienzan a aparecer viejos conflictos, secretos, reproches y personalidades difíciles de controlar, el encuentro rápidamente se convierte en un verdadero caos.\n\nUn Domingo Insoportable es una comedia familiar cargada de situaciones absurdas, discusiones y personajes que harán todo lo posible por sobrevivir a una celebración que parece no tener fin. Porque cuando se junta toda la familia, nunca se sabe quién puede terminar perdiendo la paciencia primero.",
-estado:"Entradas en venta",
-  genero:"Comedia",
-  duracion:"75 minutos",
-  sala:"A confirmar",
-  direccion:"A confirmar",
+    id:"despues-de-vos",
+    title:"Después de Vos",
+    image:"https://i.ibb.co/Vc8NgqGy/despues.jpg?raw=true",
+synopsis:"Una historia de amor atravesada por el tiempo, los recuerdos y aquello que nunca pudimos decir. Una obra íntima sobre las personas que se van, pero que de alguna manera siempre permanecen.",
+description:"Después de Vos es una historia de amor atravesada por el paso del tiempo, las decisiones que tomamos y aquellas que dejamos pendientes. En un pequeño café de barrio, dos personas se encuentran frente a frente con los recuerdos de una relación que todavía parece tener algo pendiente por decir.\n\nEntre silencios, conversaciones, emociones y momentos compartidos, la obra propone una mirada íntima sobre el amor, la pérdida y la dificultad de aprender a continuar cuando una persona que fue importante ya no está. Porque algunas historias terminan, pero no necesariamente dejan de formar parte de nosotros.",
+estado:"Entradas muy pronto",
+  genero:"Drama",
+  duracion:"60 minutos",
+  sala:"En proceso",
+  direccion:"En proceso",
   entradas:"Desde $18.000",
-    meta:"Comedia · Proximamente",
-    functions:[],
-    actors:["Claudia Moreschi","Natalia Trillo","Clara Segura","Lenny Carter","Giuliano Costadone","Lolo Ramos","Carolina Olmedo","En proceso"]
+    meta:"Drama · Proximamente",
+    functions:[    ],
+    actors:["Giuliano Costadone","Lenny Carter","Lolo Ramos","En proceso","En proceso"]
   },
   {
     id:"un-macho",
     title:"Un Macho Alfa Domesticado",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA8.png?raw=true",
+    image:"https://i.ibb.co/3yWhH1JH/alfa.jpg?raw=true",
 synopsis:"Una despedida de soltero pone en jaque las ideas sobre masculinidad, prejuicios y apariencias. Una comedia que se ríe del macho alfa y de todo aquello que intentamos demostrar frente a los demás.",
 description:"Una despedida de soltero organizada por una pareja gay se convierte en el escenario perfecto para poner en discusión las ideas, contradicciones y prejuicios que todavía existen alrededor de lo que significa ser un hombre. Entre amigos, opiniones enfrentadas y situaciones inesperadas, los protagonistas deberán enfrentarse también a sus propias máscaras.\n\nCon humor y situaciones disparatadas, la obra juega con los estereotipos del llamado “macho alfa” y propone una mirada divertida sobre las nuevas formas de relacionarnos, las expectativas sociales y esa necesidad permanente de demostrar quiénes somos frente a los demás.",
       estado:"Proximamente",
@@ -1406,7 +1410,7 @@ description:"Una despedida de soltero organizada por una pareja gay se convierte
   {
     id:"la-repartija",
     title:"La Repartija",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/3ae946cc-3b53-4f8d-be91-c3a86176c688.png?raw=true",
+    image:"https://i.ibb.co/fY1VZKZX/repartija.jpg?raw=true",
 synopsis:"Una separación, una mudanza y demasiadas cosas por repartir. Una comedia sobre el amor, los recuerdos y las pequeñas batallas que aparecen cuando una historia llega a su final.",
 description:"Una separación, una mudanza y una enorme cantidad de cosas que repartir. Lo que parece ser un simple trámite entre dos personas que decidieron tomar caminos diferentes comienza a complicarse cuando cada objeto, recuerdo y pertenencia adquiere un valor mucho más profundo del que aparentaba tener.\n\nLa Repartija es una comedia sobre las relaciones, los recuerdos y esas pequeñas batallas que aparecen cuando una historia de amor llega a su final. Porque cuando hay que decidir quién se queda con las cosas, también aparecen las preguntas sobre quién se queda con los recuerdos.",
           estado:"Proximamente",
@@ -1422,7 +1426,7 @@ description:"Una separación, una mudanza y una enorme cantidad de cosas que rep
   {
     id:"tetanic",
     title:"Tetanic",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA9.png?raw=true",
+    image:"https://i.ibb.co/TxM4QSn9/tetanic.jpg?raw=true",
 synopsis:"Una travesía épica, un romance inesperado y un barco lleno de personajes extravagantes. Una desopilante parodia cordobesa donde una gran aventura comienza a revelar que nada es exactamente lo que parece.",
 description:"A bordo del majestuoso Tetanic emprenden una travesía un capitán dispuesto a llevar a sus pasajeros hasta el fin del mundo y un grupo de personajes tan extravagantes como entrañables. Entre ellos están Rosa, una joven decidida a escapar del futuro que otros eligieron para ella; Jacobo, un soñador que encuentra felicidad en las cosas simples; Carlos, convencido de que el dinero puede resolverlo todo; una influencer que documenta cada instante; una observadora profesional de vidas ajenas y un vendedor ambulante capaz de hacer negocios incluso en medio de una catástrofe. Entre cenas de gala, bailes de cuarteto, romances, misterios náuticos y situaciones cada vez más absurdas, el viaje parece destinado a convertirse en una leyenda.\n\nPero cuando comienzan a aparecer señales inexplicables, documentos sospechosos y detalles que no parecen encajar, la gran travesía empieza a mostrar sus primeras grietas. Tetanic: La gran mentira del colectivo popular es una comedia teatral desopilante que parodia uno de los relatos más famosos de la cultura popular desde una mirada profundamente cordobesa. Humor, música, romance, misterio y personajes inolvidables se mezclan en un viaje donde nada parece ser exactamente lo que aparenta.",
           estado:"Proximamente",
@@ -1438,7 +1442,7 @@ description:"A bordo del majestuoso Tetanic emprenden una travesía un capitán 
   {
     id:"error-1997",
     title:"Error 1997",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA7.png?raw=true",
+    image:"https://i.ibb.co/tPQRW3Nt/error.jpg?raw=true",
 synopsis:"Un joven de 2026 despierta inesperadamente dentro de un videoclub de 1997. Una comedia nostálgica que enfrenta dos épocas y nos invita a preguntarnos cuánto ganamos y cuánto perdimos con el paso del tiempo.",
 description:"Un joven de 2026 sufre un accidente y, al despertar, descubre que se encuentra en un videoclub de 1997. Allí comienza a vivir situaciones cotidianas que para él resultan completamente extrañas, mientras que para quienes lo rodean, sus relatos sobre el futuro parecen todavía más increíbles. Su manera de hablar, sus conocimientos y las cosas que cuenta sobre el mundo que vendrá despiertan la curiosidad de los presentes, que poco a poco comienzan a imaginar cómo será esa vida que todavía parece imposible.\n\nA través del humor, los encuentros y las diferencias entre dos épocas, Error 1997 propone un viaje por la forma en que cambiaron nuestras relaciones, nuestras historias de amor y nuestra manera de comunicarnos. Una mirada nostálgica y divertida sobre el paso del tiempo y sobre cómo, mientras la tecnología nos permitió estar cada vez más conectados, también pudo alejarnos de aquello que alguna vez fue esencial: mirarnos, escucharnos y encontrarnos cara a cara.",
           estado:"Proximamente",
@@ -1454,7 +1458,7 @@ description:"Un joven de 2026 sufre un accidente y, al despertar, descubre que s
     {
     id:"qepd",
     title:"Q.E.P.D.",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA6.png?raw=true",
+    image:"https://i.ibb.co/DHncwTQx/qepd.jpg?raw=true",
 synopsis:"Seis personas se reúnen para despedir a un hombre recientemente fallecido, pero ninguno parece estar allí solamente por el difunto. Una comedia delirante de secretos, ambiciones y herencias que promete un velorio inolvidable.",
 description:"Seis personas se reúnen en la casa de un hombre recientemente fallecido para despedirlo… o al menos eso parece. Entre flores, silencios incómodos y recuerdos poco claros, el velorio comienza a revelar que ninguno está allí únicamente por el difunto. Cada uno cree tener algún derecho sobre una posible herencia y, a medida que aparecen viejas promesas, reproches y secretos, la solemnidad del momento comienza a transformarse en una situación cada vez más absurda.\n\nLo que parecía una despedida termina convirtiéndose en una verdadera batalla de ambiciones, sospechas y confesiones inesperadas. Q.E.P.D. es una comedia teatral ágil y delirante sobre la codicia, las apariencias y esa curiosa capacidad humana de mostrar nuestra verdadera cara cuando creemos que nadie está mirando. Porque en este velorio, quizás haya más cosas por descubrir de las que cualquiera de los presentes imaginaba.",
           estado:"Proximamente",
@@ -1470,7 +1474,7 @@ description:"Seis personas se reúnen en la casa de un hombre recientemente fall
       {
     id:"el-casting",
     title:"El casting más barato del mundo",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA5.png?raw=true",
+    image:"https://i.ibb.co/VPfC03h/casting.jpg?raw=true",
 synopsis:"Un grupo de aspirantes a la fama llega a un misterioso casting dispuesto a hacer cualquier cosa por conseguir una oportunidad. Una comedia absurda donde las apariencias, los sueños de grandeza y situaciones cada vez más extrañas se mezclan sin control.",
 description:"En un lugar extraño y aparentemente poco apropiado se organiza un casting al que llegan personas dispuestas a hacer prácticamente cualquier cosa por alcanzar la fama. Cada participante tiene sus propias expectativas, sueños y extravagancias: desde una mujer mayor que siempre quiso convertirse en una estrella de Flashdance, hasta un fanático de las grandes marcas que parece no poder pronunciar una frase sin mencionar alguna de ellas, pasando por una influencer con enormes aires de grandeza y una cantidad de seguidores bastante más modesta de lo que ella quisiera admitir.\n\nAl frente de este particular casting se encuentra un director tan misterioso como extravagante, que asegura representar a importantes compañías de la industria cinematográfica. Mientras los aspirantes intentan demostrar que tienen todo lo necesario para triunfar, comienzan a suceder situaciones cada vez más extrañas y aparecen señales de que algo no parece estar funcionando del todo bien. Una comedia absurda sobre la fama, las apariencias y hasta dónde somos capaces de llegar cuando creemos que estamos frente a nuestra gran oportunidad.",
           estado:"De archivo",
@@ -1483,10 +1487,27 @@ description:"En un lugar extraño y aparentemente poco apropiado se organiza un 
     functions:[],
     actors:["Giuliano Costadone","Lolo Ramos","Rita Lión","Carolina Olmedo","Mariana Guevara"]
   },
+    {
+    id:"el-peor-evento",
+    title:"El Peor Evento del Año",
+    image:"https://i.ibb.co/4nYXQmt5/event.jpg?raw=true",
+synopsis:"Una inauguración aparentemente perfecta se convierte en un desastre inesperado. Una comedia explosiva donde secretos, invitados y situaciones absurdas hacen que todo salga peor de lo imaginado.",
+      description:"Una inauguración que prometía ser una noche perfecta se transforma rápidamente en un verdadero desastre. Entre invitados inesperados, situaciones absurdas, secretos que salen a la luz y personajes que parecen empeñados en complicarlo todo, lo que debía ser una celebración termina convirtiéndose en una cadena de acontecimientos cada vez más descontrolados.\n\nUna comedia dinámica y explosiva sobre las apariencias, los vínculos y esas situaciones en las que todo puede salir mal al mismo tiempo. Porque cuando pensás que ya ocurrió lo peor… probablemente todavía falte lo peor del evento.",
+
+      estado:"Entradas a la venta",
+  genero:"Comedia",
+  duracion:"75 minutos",
+  sala:"Sala 12",
+  direccion:"Santa Rosa 212, Córdoba",
+  entradas:"Desde $1.000",
+    meta:"Agosto · 2026",
+    functions:[],
+    actors:["Lolo Ramos","Giuliano Costadone","Mariano Rosemberg","Carla Restivo","Mariana Guevara","Carolina Olmedo","Laura Charras","Lenny Carter","Natalia Trillo"]
+  },
   {
     id:"ultima-silla",
     title:"La Última Silla",
-    image:"https://github.com/apolocreativook/ticketera/blob/main/LALA4.png?raw=true",
+    image:"https://i.ibb.co/jP2pwtSF/silla.jpg?raw=true",
 synopsis:"Seis desconocidos llegan a una reunión donde sobra una silla. Entre risas, discusiones y situaciones absurdas, las máscaras comienzan a caer y aparecen las historias que cada uno intenta esconder.",
 description:"Seis personas que no se conocen llegan a una misteriosa reunión. Las sillas están dispuestas en semicírculo y hay una más de las necesarias. Lo que comienza como un encuentro incómodo entre desconocidos rápidamente se transforma en una sucesión de conversaciones absurdas, chistes nerviosos y discusiones ridículas, mientras cada uno intenta mostrar una seguridad que quizás no siente realmente. Pero cuando el ruido se detiene y las máscaras empiezan a caer, algo mucho más profundo comienza a aparecer.\n\nUno a uno, los personajes dejan entrever las historias que los llevaron hasta ese lugar: pérdidas, culpas, ansiedades, silencios y heridas que durante mucho tiempo aprendieron a esconder detrás del humor o de una aparente normalidad. La Última Silla combina comedia y emoción para convertirse en un espejo de nuestras propias contradicciones. Porque muchas veces reímos para no rompernos, y aunque no siempre lo digamos, todos cargamos con alguna ausencia.",
           estado:"De archivo",
@@ -1499,6 +1520,7 @@ description:"Seis personas que no se conocen llegan a una misteriosa reunión. L
     functions:[],
     actors:["Lenny Carter","Emme","Laura Cikra","Giuliano Costadone","Carolina Olmedo","Lolo Ramos","Rita Lión"]
   }
+  
   
 ];
 
@@ -1594,12 +1616,13 @@ function renderProductions(){
   const box = document.getElementById("productionList");
 
   const vigentesIds = [
-    "el-peor-evento",
-    "despues-de-vos"
+      "un-domingo",
+"el-mecanico",
+
   ];
 
   const proximamenteIds = [
-    "un-domingo",
+      "despues-de-vos",
     "un-macho",
     "la-repartija",
     "tetanic",
@@ -1609,7 +1632,8 @@ function renderProductions(){
 
   const archivoIds = [
     "ultima-silla",
-    "el-casting"
+    "el-casting",
+        "el-peor-evento",
   ];
 
   const vigentes = allProductions.filter(p =>
