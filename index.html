@@ -296,7 +296,7 @@ h2{
 }
 .actor-card:hover{transform:translateY(-4px);background:rgba(126,89,172,.10)}
 .actor-photo{aspect-ratio:1.35/1;overflow:hidden;background:#201d26}
-.actor-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
+.actor-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:.4s}
 .actor-card:hover .actor-photo img{transform:scale(1.04)}
 .actor-body{padding:14px 15px}
 .actor-body h3{font-size:.95rem}
@@ -936,7 +936,7 @@ footer{border-top:1px solid var(--line);padding:55px 0;color:var(--muted)}
       </div>
 
       <p class="section-intro">
-        También podés abonar tus entradas mediante una transferencia directa.
+        También podés abonar tus entradas mediante una transferencia directa. Al elegir esta modalidad, el monto abonado no incluye el 15% correspondiente al costo de servicio.
       </p>
     </div>
 
@@ -1330,7 +1330,7 @@ estado:"Entradas en venta",
       },
 
     ],
-    actors:["En proceso","En proceso","En proceso","En proceso","En proceso","En proceso","En proceso","En proceso",]
+    actors:["Lolo Ramos","Rita Lión","Lenny Carter","Carolina Olmedo","La Gata Flow","Agustín Gamboa","Martina Pastor","Ale Jimenez",]
   },
 
     {
@@ -1389,7 +1389,7 @@ estado:"Entradas muy pronto",
   entradas:"Desde $18.000",
     meta:"Drama · Proximamente",
     functions:[    ],
-    actors:["Giuliano Costadone","Lenny Carter","Lolo Ramos","En proceso","En proceso"]
+    actors:["Giuliano Costadone","Lenny Carter","Lolo Ramos","Dolores Bazán"]
   },
   {
     id:"un-macho",
@@ -1500,7 +1500,7 @@ synopsis:"Una inauguración aparentemente perfecta se convierte en un desastre i
   sala:"Sala 12",
   direccion:"Santa Rosa 212, Córdoba",
   entradas:"Desde $1.000",
-    meta:"Agosto · 2026",
+    meta:"Comedia · Archivo Apolo",
     functions:[],
     actors:["Lolo Ramos","Giuliano Costadone","Mariano Rosemberg","Carla Restivo","Mariana Guevara","Carolina Olmedo","Laura Charras","Lenny Carter","Natalia Trillo"]
   },
@@ -1526,7 +1526,7 @@ description:"Seis personas que no se conocen llegan a una misteriosa reunión. L
 
 /* ACTORES: podés agregar tantos como quieras */
 const actors = [
-  ["Lolo Ramos","Actor · Director","https://i.ibb.co/0pLW3rBZ/LOLO500.jpg","Lolo Ramos es actor, escritor, director teatral, docente y productor cultural, con una trayectoria de más de 24 años vinculada al teatro independiente, la comunicación y la creación artística. Formado en teatro en la Escuela de Artes Visuales Luz Vieira Méndez y como Locutor Nacional en el C.U.P., certificado por el I.S.E.R., actualmente cursa la Licenciatura en Psicología en la Universidad Nacional de Córdoba."],
+  ["Lolo Ramos","Actor · Director","https://i.ibb.co/rfmFX6BC/lolo2500.jpg","Lolo Ramos es actor, escritor, director teatral, docente y productor cultural, con una trayectoria de más de 24 años vinculada al teatro independiente, la comunicación y la creación artística. Formado en teatro en la Escuela de Artes Visuales Luz Vieira Méndez y como Locutor Nacional en el C.U.P., certificado por el I.S.E.R., actualmente cursa la Licenciatura en Psicología en la Universidad Nacional de Córdoba."],
   ["Giuliano Costadone","Actor · Director","https://i.ibb.co/JWnWfZc3/GIULIANO500.jpg","Actor, modelo, escritor, director y entrenador actoral, con una trayectoria que abarca el teatro musical, el teatro independiente, el cine y el modelaje. Inició su preparación en el CineClub Municipal de Córdoba y se especializó en Comedia Musical. Cuenta con experiencia en más de 30 cortometrajes, además de una amplia trayectoria teatral."],
   ["Carolina Olmedo","Actriz","https://i.ibb.co/WpFT8dtD/CAROLINA500.png","Actriz formada en teatro independiente, con experiencia en interpretación, construcción de personajes y creación escénica. Se formó en el Taller de Teatro de Julián Farah. Complementa su formación con seminarios y entrenamientos de clown, improvisación y actuación junto a referentes como Florencia Boasso, Majul, Emilio Orieta, Anita Martínez y Juan Gil Navarro."],
   ["Mariana Guevara","Actriz","https://i.ibb.co/ynk4CsGK/MARIANA500.png","Actriz con una trayectoria vinculada al teatro comunitario, la expresión escénica y el encuentro humano a través del arte. Se formó en teatro en Mendoza, integró diversos elencos con fines sociales y comunitarios. En Córdoba continuó su formación con cursos de Clown e Improvisación Teatral junto a Florencia Boasso y seminarios actorales con Juan José Navarro, Esteban Pérez, Majul y Emilio."],
@@ -1534,7 +1534,7 @@ const actors = [
   ["Edgardo Linares","Actor","https://i.ibb.co/7tBXLRcb/EDGARDO500.png","Actor emergente con una trayectoria marcada por la disciplina, la perseverancia y la capacidad de superación. Durante su juventud desarrolló una carrera en las inferiores en Talleres de Córdoba y participando en distintos clubes, mientras paralelamente se formó profesionalmente como Contador Público. Ha demostrado una creciente pasión por el teatro independiente."],
   ["Carla Restivo","Actriz","https://i.ibb.co/67swX2PK/CARLA500.png","Actriz y creadora de contenido, formada en teatro y humor. Se formó en el CPC Argüello junto a Aida Rosman y Marcelo Collosa y actualmente continúa su entrenamiento con Mario Corso. Participó de seminarios, propuestas de stand up, proyectos audiovisuales y cortometrajes. Abogada de profesión, combina su formación con una marcada sensibilidad artística."],
   ["Natalia Trillo","Actriz","https://i.ibb.co/Wv1M2mKw/NATALIA500.jpg","Actriz formada en teatro contemporáneo, clown y actuación frente a cámara, con experiencia en propuestas experimentales, interactivas y de teatro independiente. Se formó en Usina Teatral junto a Carolina Britos y complementó su entrenamiento con referentes como Esther Goris. Su perfil se caracteriza por la búsqueda de nuevas formas de expresión artística."],
-  ["Mariano Rosemberg","Actor","https://i.ibb.co/1JK9z2KP/MARIANO500.jpg","Actor, creador escénico, abogado y Locutor Nacional, enfocado en el humor, la comedia y la construcción de personajes con identidad propia. Su formación en actuación y stand-up le permitió desarrollar herramientas de improvisación, expresión y conexión directa con el público, con especial interés por los personajes singulares, el absurdo y las situaciones inesperadas."],
+  ["Mariano Rosemberg","Actor, humorista","https://i.ibb.co/1JK9z2KP/MARIANO500.jpg","Actor, creador escénico, abogado y Locutor Nacional, enfocado en el humor, la comedia y la construcción de personajes con identidad propia. Su formación en actuación y stand-up le permitió desarrollar herramientas de improvisación, expresión y conexión directa con el público, con especial interés por los personajes singulares, el absurdo y las situaciones inesperadas."],
   ["Emme","Actor","https://i.ibb.co/mrywhP2V/EMME500.jpg","Actor formado en Teatro La Luna, donde realizó talleres de teatro y entrenamiento en monólogos. Su recorrido incluye experiencias en comedia, drama y teatro contemporáneo. Su perfil se caracteriza por la dedicación, el compromiso y una constante búsqueda de crecimiento artístico dentro del teatro independiente."],
   ["Laura Cikra","Actriz","https://i.ibb.co/MDH3ZBWw/LAURA500.jpg","Actriz, directora y docente teatral, formada en el Seminario de Teatro Jolie Libois de Córdoba. Cuenta con una amplia trayectoria en el teatro independiente y oficial, y formó parte del reconocido Teatro Goethe. Actualmente se desempeña como docente de teatro para adultos, combinando experiencia, formación y compromiso con el desarrollo del teatro independiente."],
   ["Rita Lión","Actriz","https://i.ibb.co/DHjqYnkM/RITA500.jpg","Actriz y referente del teatro independiente cordobés, con una amplia trayectoria vinculada a la interpretación, la creación escénica y el trabajo comunitario. Se formó en el Seminario de Teatro Jolie Libois y en la Escuela Integral Roberto Arlt. Integró numerosas producciones teatrales, además de participar en proyectos de creación colectiva donde también desarrolló tareas de dirección."],
@@ -1543,11 +1543,11 @@ const actors = [
   ["Clara Segura","Actriz","https://i.ibb.co/nqxmFPGM/CLARA500.jpg","Actriz, docente y Licenciada en Comunicación Social con orientación audiovisual, formada en la Escuela Provincial Roberto Arlt y la Universidad Nacional de Córdoba. Su trayectoria combina teatro independiente, formación escénica y experiencia audiovisual. Su perfil se destaca por la versatilidad y el compromiso con la creación cultural independiente."],
   ["Laura Charras","Actriz","https://i.ibb.co/20Xnn7gG/LAURA500.jpg","Actriz emergente, modelo y maquilladora profesional, con experiencia en teatro y producciones audiovisuales. Cuenta con experiencia frente a cámara en videoclips, producciones audiovisuales y sesiones de modelaje, desarrollando naturalidad, expresividad y capacidad de adaptación. Se destaca por su sensibilidad, compromiso y constante disposición al aprendizaje."],
   ["Ezequiel Perez","Humorista","https://i.ibb.co/VczZ2rRy/eze.jpg","Humorista, actor y creador de contenido cordobés, reconocido por su carisma, autenticidad y conexión con el humor cotidiano y popular. Su experiencia en distintos ámbitos laborales nutrió su mirada humorística y su capacidad para construir personajes cercanos. Su estilo combina espontaneidad, observación y una genuina vocación por hacer reír y conectar con el público."],
-  ["En proceso","Actriz","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
-  ["En proceso","Actor","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
-  ["En proceso","Actor","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
-  ["En proceso","Actriz","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
-  ["En proceso","Actor","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
+  ["La Gata flow","Actriz, cantante","https://i.ibb.co/0RSh6qdP/yani500.jpg","Bailarina, profesora de danzas árabes y reggaetón, y cantante de diversos estilos. Fue telonera de Ozuna en dos oportunidades y participó en distintos programas y eventos de televisión y espectáculos de Córdoba, incluyendo Cosquín Cumbia y Coca-Cola in Concert. También se desempeñó como notera en Canal 10 y Canal C, y participó en desfiles, videoclips y como extra en la película La Zurda."],
+  ["Agustín Gamboa","Actor","https://i.ibb.co/FqmxMBwX/agustin500.jpg","Agustín Gamboa es director teatral, actor y dramaturgo, y fundador y cabeza de AG Producciones Teatrales. Cuenta con experiencia en producciones teatrales en Buenos Aires, Villa Carlos Paz y Córdoba, participando en distintos proyectos tanto desde la creación artística como desde la producción y gestión teatral."],
+  ["Martina Pastor","Actriz","https://i.ibb.co/PvsVt3mB/martina500.jpg","Cargando información."],
+  ["Ale Jimenez","Actriz, conductora","https://i.ibb.co/mr3DPTLP/ale500.jpg","Artista integral con experiencia en diferentes áreas del mundo del entretenimiento y la comunicación. Se desempeña como actriz, conductora de televisión y radio, y modelo, destacándose por su presencia escénica, desenvoltura frente a cámara y capacidad de comunicación."],
+  ["Dolores Bazán","Actriz","https://i.ibb.co/Y7nhYdgQ/DOLO500.jpg","Actriz y docente de teatro, con una sólida formación construida a través de múltiples cursos y talleres junto a reconocidos referentes de la actuación. Su recorrido artístico se complementa con su labor como formadora, transmitiendo su experiencia y pasión por el teatro a nuevas generaciones. Paralelamente, desarrolla su actividad profesional en el ámbito de la salud."],
   ["En proceso","Actriz","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."],
   ["En proceso","Actor","https://i.ibb.co/fGMDX8bh/VACIO.jpg","Cargando información."]
 ];
