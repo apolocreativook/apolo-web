@@ -1240,6 +1240,285 @@
             font-size: .8rem
         }
 
+/* ================================
+   PRÓXIMOS ESTRENOS
+================================ */
+
+.upcoming-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:25px;
+}
+
+.upcoming-card{
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  transition:.25s ease;
+}
+
+.upcoming-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(201,168,78,.45);
+  box-shadow:var(--shadow);
+}
+
+.upcoming-image{
+  width:100%;
+  aspect-ratio:8 / 5;
+  overflow:hidden;
+  background:#111117;
+}
+
+.upcoming-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.upcoming-body{
+  padding:16px;
+}
+
+.upcoming-title{
+  font-family:"Playfair Display",serif;
+  font-size:1.35rem;
+  line-height:1.15;
+  margin-bottom:8px;
+}
+
+.upcoming-status{
+  color:#f28c18;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.upcoming-button{
+  width:100%;
+  padding:9px 12px;
+  border:1px solid rgba(201,168,78,.45);
+  border-radius:8px;
+  background:transparent;
+  color:var(--gold-light);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.upcoming-button:hover{
+  background:rgba(201,168,78,.12);
+  border-color:var(--gold-light);
+}
+
+
+/* ================================
+   MODAL PRÓXIMOS ESTRENOS
+================================ */
+
+.upcoming-modal{
+  position:fixed;
+  inset:0;
+  z-index:2500;
+  display:none;
+  place-items:center;
+  padding:25px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+}
+
+.upcoming-modal.show{
+  display:grid;
+}
+.upcoming-modal-coming{
+  margin-top:25px;
+  padding:16px 20px;
+  border:1px solid rgba(201,168,78,.55);
+  border-radius:12px;
+  background:linear-gradient(
+    135deg,
+    rgba(201,168,78,.10),
+    rgba(255,255,255,.025)
+  );
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+.upcoming-modal-coming strong{
+  display:block;
+  color:var(--gold-light);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+.upcoming-modal-coming span{
+  display:block;
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.5;
+}
+
+.upcoming-modal-box{
+  width:min(950px,100%);
+  max-height:90vh;
+  overflow:auto;
+  position:relative;
+  background:#121218;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.upcoming-modal-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  z-index:2;
+  border:0;
+  background:none;
+  color:white;
+  font-size:1.7rem;
+  cursor:pointer;
+}
+
+.upcoming-modal-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.upcoming-modal-image img{
+  width:100%;
+  display:block;
+  border-radius:15px;
+}
+
+.upcoming-modal-info h3{
+  font-family:"Playfair Display",serif;
+  font-size:2.5rem;
+  line-height:1.05;
+  margin-bottom:8px;
+}
+
+.upcoming-modal-eyebrow{
+  color:#f28c18;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.upcoming-modal-synopsis{
+  color:white;
+  font-size:1rem;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.upcoming-modal-description{
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:22px;
+}
+
+.upcoming-modal-details{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.upcoming-modal-detail{
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
+}
+
+.upcoming-modal-detail strong{
+  display:block;
+  color:var(--gold-light);
+  font-size:.7rem;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.upcoming-modal-detail span{
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+
+/* ================================
+   RESPONSIVE DE PRÓXIMOS ESTRENOS
+================================ */
+
+@media(max-width:900px){
+
+  .upcoming-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .upcoming-modal-grid{
+    grid-template-columns:1fr;
+  }
+
+  .upcoming-modal-image{
+    max-width:320px;
+  }
+
+}
+
+@media(max-width:620px){
+
+  .upcoming-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .upcoming-body{
+    padding:11px;
+  }
+
+  .upcoming-title{
+    font-size:1.05rem;
+  }
+
+  .upcoming-status{
+    font-size:.58rem;
+  }
+
+  .upcoming-button{
+    font-size:.6rem;
+    padding:8px 5px;
+  }
+
+  .upcoming-modal-box{
+    padding:20px;
+  }
+
+  .upcoming-modal-info h3{
+    font-size:2rem;
+  }
+
+  .upcoming-modal-details{
+    grid-template-columns:1fr;
+  }
+
+}
+
         /* RESPONSIVE */
         @media(max-width:900px) {
             .nav-links {
@@ -2786,7 +3065,7 @@
                 text: "Participá por entradas para nuestras próximas funciones y beneficios especiales.",
                 list: ["Premios transferibles", "Participación online", "Nuevos sorteos cada mes"],
                 button: "Participar del sorteo",
-                link: "https://www.socialcreator.com/apolocreativo"
+                link: "https://beneficios.apolocreativo.site/"
             },
             {
                 tag: "Beneficios",
@@ -2794,7 +3073,7 @@
                 text: "Descuentos, 2x1 y experiencias para quienes forman parte de nuestra comunidad.",
                 list: ["Descuentos especiales", "2x1 en funciones seleccionadas", "Premios sorpresa"],
                 button: "Ver beneficios",
-                link: "https://www.socialcreator.com/apolocreativo"
+                link: "https://beneficios.apolocreativo.site/"
             }
         ];
 
@@ -3022,71 +3301,149 @@
     </section>
 
 
-    <!-- PRÓXIMAMENTE -->
+<!-- PRÓXIMAMENTE -->
 
-    <section class="production-section">
+<section class="production-section">
 
-      <div class="production-section-title">
-        Próximos <span class="gold">estrenos</span>
-      </div>
+  <div class="production-section-title">
+    Próximos <span class="gold">estrenos</span>
+  </div>
 
-      <button
-        class="production-toggle"
-        onclick="toggleProductionSection('proximamenteProducciones', this)"
-      >
-        ＋ Conocer más
-      </button>
+  <div class="upcoming-grid">
+    ${proximamente.map((p, i) => `
+      
+      <article class="upcoming-card">
 
-      <div
-        class="production-collapsible"
-        id="proximamenteProducciones"
-      >
-
-        <div
-          class="production-list"
-          style="margin-top:22px"
-        >
-          ${renderGroup(proximamente)}
+        <div class="upcoming-image">
+          <img src="${p.image}" alt="${p.title}">
         </div>
 
-      </div>
+        <div class="upcoming-body">
 
-    </section>
+          <div class="upcoming-title">
+            ${p.title}
+          </div>
 
+          <div class="upcoming-status">
+            PRÓXIMAMENTE
+          </div>
 
-    <!-- DE ARCHIVO -->
+          <button
+            class="upcoming-button"
+            onclick="openUpcomingModal('${p.id}')"
+          >
+            VER MÁS INFO
+          </button>
 
-    <section class="production-section">
-
-      <div class="production-section-title">
-        De <span class="gold">archivo</span>
-      </div>
-
-      <button
-        class="production-toggle"
-        onclick="toggleProductionSection('archivoProducciones', this)"
-      >
-        ＋ Ver archivos
-      </button>
-
-      <div
-        class="production-collapsible"
-        id="archivoProducciones"
-      >
-
-        <div
-          class="production-list"
-          style="margin-top:22px"
-        >
-          ${renderGroup(archivo)}
         </div>
 
-      </div>
+      </article>
 
-    </section>
+    `).join('')}
+  </div>
+
+</section>
+
+<!-- DE ARCHIVO -->
+
+<section class="production-section">
+
+  <div class="production-section-title">
+    De <span class="gold">archivo</span>
+  </div>
+
+  <div class="upcoming-grid">
+
+    ${archivo.map((p, i) => `
+      
+      <article class="upcoming-card">
+
+        <div class="upcoming-image">
+          <img
+            src="${p.image}"
+            alt="${escapeHtml(p.title)}"
+          >
+        </div>
+
+        <div class="upcoming-body">
+
+          <div class="upcoming-title">
+            ${escapeHtml(p.title)}
+          </div>
+
+          <div class="upcoming-status">
+            DE ARCHIVO
+          </div>
+
+          <button
+            class="upcoming-button"
+            onclick="openUpcomingModal('${p.id}')"
+          >
+            VER MÁS INFO
+          </button>
+
+        </div>
+
+      </article>
+
+    `).join('')}
+
+  </div>
+
+</section>
 
   `;
         }
+        
+        function openUpcomingModal(id) {
+
+    const production = allProductions.find(p => p.id === id);
+
+    if (!production) return;
+
+    const modal = document.getElementById("upcomingModal");
+
+    if (!modal) return;
+
+    document.getElementById("upcomingModalImage").src = production.image;
+    document.getElementById("upcomingModalImage").alt = escapeHtml(production.title);
+
+    document.getElementById("upcomingModalTitle").textContent = production.title;
+
+    document.getElementById("upcomingModalSynopsis").textContent =
+        production.synopsis || "";
+
+    document.getElementById("upcomingModalDescription").textContent =
+        production.description || "";
+
+    document.getElementById("upcomingModalGenero").textContent =
+        production.genero || "Teatro";
+
+    document.getElementById("upcomingModalDuracion").textContent =
+        production.duracion || "A confirmar";
+
+    document.getElementById("upcomingModalSala").textContent =
+        production.sala || "A confirmar";
+
+    document.getElementById("upcomingModalDireccion").textContent =
+        production.direccion || "Córdoba Capital";
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeUpcomingModal() {
+
+    const modal = document.getElementById("upcomingModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "";
+}
 
         /* TICKETERA */
         function initTicketera() {
@@ -3659,6 +4016,110 @@ ${message}`;
         </div>
 
     </div>
+    <!-- MODAL PRÓXIMOS ESTRENOS -->
+
+<!-- MODAL PRÓXIMOS ESTRENOS -->
+
+<div
+  class="upcoming-modal"
+  id="upcomingModal"
+  onclick="if(event.target === this) closeUpcomingModal()"
+>
+
+  <div class="upcoming-modal-box">
+
+    <button
+      class="upcoming-modal-close"
+      onclick="closeUpcomingModal()"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+    <!-- IMAGEN GRANDE ARRIBA -->
+
+    <div class="upcoming-modal-image">
+      <img
+        id="upcomingModalImage"
+        src=""
+        alt=""
+      >
+    </div>
+
+    <!-- INFORMACIÓN -->
+
+    <div class="upcoming-modal-info">
+
+      <div class="upcoming-modal-eyebrow">
+        PRÓXIMAMENTE
+      </div>
+
+      <h3 id="upcomingModalTitle"></h3>
+
+      <div
+        class="upcoming-modal-synopsis"
+        id="upcomingModalSynopsis"
+      ></div>
+
+      <div
+        class="upcoming-modal-description"
+        id="upcomingModalDescription"
+      ></div>
+
+      <div class="upcoming-modal-details">
+
+        <div class="upcoming-modal-detail">
+
+          <div>
+            <strong>Género</strong>
+            <span id="upcomingModalGenero"></span>
+          </div>
+        </div>
+
+        <div class="upcoming-modal-detail">
+
+          <div>
+            <strong>Duración</strong>
+            <span id="upcomingModalDuracion"></span>
+          </div>
+        </div>
+
+        <div class="upcoming-modal-detail">
+
+          <div>
+            <strong>Sala</strong>
+            <span id="upcomingModalSala"></span>
+          </div>
+        </div>
+
+        <div class="upcoming-modal-detail">
+
+          <div>
+            <strong>Dirección</strong>
+            <span id="upcomingModalDireccion"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="upcoming-modal-coming">
+
+
+
+        <div>
+          <strong>PRÓXIMAMENTE EN CARTEL</strong>
+          <span>
+            Muy pronto anunciaremos funciones y entradas a la venta.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 </body>
 
 </html>
