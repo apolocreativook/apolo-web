@@ -2629,7 +2629,7 @@
                         paymentLink: "https://link.mercadopago.com.ar/apolocreativo"
                     }
                 ],
-                actors: ["Claudia Moreschi", "Natalia Trillo", "Clara Segura", "Lenny Carter", "Emme Ochoa", "Lolo Ramos", "Carolina Olmedo", "En proceso"]
+                actors: ["Claudia Moreschi", "Natalia Trillo", "Clara Segura", "Lenny Carter", "Emme Ochoa", "Lolo Ramos", "Carolina Olmedo", "Martina Pastor"]
             },
 
         ];
@@ -3439,7 +3439,30 @@
     const production = allProductions.find(p => p.id === id);
 
     if (!production) return;
+const comingBox = document.querySelector(".upcoming-modal-coming");
 
+if (comingBox) {
+    if (production.estado === "De archivo") {
+        comingBox.innerHTML = `
+            <div>
+                <strong>YA PASÓ POR NUESTRO ESCENARIO</strong>
+                <span>
+                    Esta obra ya fue presentada, pero puede volver a encontrarse con el público.
+                    Estaremos anunciando futuras funciones y nuevas presentaciones.
+                </span>
+            </div>
+        `;
+    } else {
+        comingBox.innerHTML = `
+            <div>
+                <strong>PRÓXIMAMENTE EN CARTEL</strong>
+                <span>
+                    Muy pronto anunciaremos funciones y entradas a la venta.
+                </span>
+            </div>
+        `;
+    }
+}
     const modal = document.getElementById("upcomingModal");
 
     if (!modal) return;
