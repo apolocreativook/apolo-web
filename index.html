@@ -1518,7 +1518,46 @@
   }
 
 }
+/* ACTORES EN MODAL */
+.upcoming-modal-actors{
+  width:100%;
+  margin-top:18px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(255,255,255,.025);
+}
 
+.upcoming-modal-actors-title{
+  color:var(--gold-light);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+
+.upcoming-modal-actors-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 18px;
+}
+
+.upcoming-modal-actor{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#d9d4df;
+  font-size:.8rem;
+}
+
+.upcoming-modal-actor img{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid rgba(201,168,78,.35);
+}
         /* RESPONSIVE */
         @media(max-width:900px) {
             .nav-links {
@@ -3427,7 +3466,22 @@
 
     document.getElementById("upcomingModalDireccion").textContent =
         production.direccion || "Córdoba Capital";
+const actorsBox = document.getElementById("upcomingModalActors");
 
+if (actorsBox) {
+    actorsBox.innerHTML = (production.actors || []).map(name => `
+<div
+    class="upcoming-modal-actor"
+    onclick="openActorModal('${escapeHtml(name)}')"
+>
+    <img
+        src="${actorPhoto(name)}"
+        alt="${escapeHtml(name)}"
+    >
+    <span>${escapeHtml(name)}</span>
+</div>
+    `).join("");
+}
     modal.classList.add("show");
 
     document.body.style.overflow = "hidden";
@@ -4101,7 +4155,19 @@ ${message}`;
         </div>
 
       </div>
+      <!-- ACTORES -->
+      <div class="upcoming-modal-actors">
 
+        <div class="upcoming-modal-actors-title">
+          ACTORES
+        </div>
+
+        <div
+          class="upcoming-modal-actors-list"
+          id="upcomingModalActors"
+        ></div>
+
+      </div>
       <div class="upcoming-modal-coming">
 
 
