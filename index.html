@@ -925,6 +925,55 @@
             font-size: .85rem
         }
 
+
+        /* CASTINGS: ofertas integradas en el diseño original de Apolo */
+        .casting-filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 22px}
+        .casting-filter{padding:10px 16px;border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.035);color:var(--text);cursor:pointer;font-size:.8rem;transition:.2s}
+        .casting-filter:hover,.casting-filter.active{background:var(--gold);border-color:var(--gold);color:#171717}
+        .casting-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+        .casting-offer{display:flex;flex-direction:column;min-width:0;padding:25px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));transition:transform .2s,border-color .2s,box-shadow .2s}
+        .casting-offer:hover{transform:translateY(-3px);border-color:rgba(201,168,78,.55);box-shadow:0 16px 40px #0002}
+        .casting-offer-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+        .casting-category{display:inline-block;padding:6px 11px;border-radius:30px;background:rgba(201,168,78,.13);color:var(--gold-light);font-size:.7rem;font-weight:700}
+        .casting-status{font-size:.72rem;color:#b9d8b9;font-weight:700}
+        .casting-offer h3{font-family:'Playfair Display',serif;font-size:1.65rem;line-height:1.2;margin:18px 0 10px}
+        .casting-offer p{color:var(--muted);font-size:.88rem;line-height:1.65;margin:0}
+        .casting-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:17px;color:var(--muted);font-size:.74rem}
+        .casting-offer-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:23px}
+        .casting-hint{color:var(--muted);font-size:.74rem}
+        .casting-empty{grid-column:1/-1;padding:25px;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+        .casting-modal-backdrop{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.78);padding:18px;align-items:center;justify-content:center}
+        .casting-modal-backdrop.open{display:flex}
+        .casting-modal{width:min(760px,100%);max-height:92vh;overflow:auto;background:#17151b;color:#f8f5ee;border:1px solid rgba(201,168,78,.3);border-radius:22px;box-shadow:0 25px 90px #0008}
+        .casting-modal-head{position:relative;padding:27px;background:linear-gradient(135deg,rgba(201,168,78,.16),rgba(255,255,255,.025));border-bottom:1px solid var(--line)}
+        .casting-modal-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.15;margin:14px 45px 8px 0}
+        .casting-modal-head p{color:var(--muted);margin:0;line-height:1.6}
+        .casting-close{position:absolute;right:16px;top:16px;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#24212a;color:white;font-size:25px;cursor:pointer}
+        .casting-modal-body{padding:25px}
+        .casting-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+        .casting-detail-cell{padding:13px;border:1px solid var(--line);border-radius:12px;overflow-wrap:anywhere}
+        .casting-detail-cell small{display:block;color:var(--muted);font-size:.7rem;margin-bottom:4px}
+        .casting-detail-cell strong{font-size:.83rem}
+        .casting-detail-block{margin:22px 0}
+        .casting-detail-block h4{font-size:.98rem;margin:0 0 7px;color:var(--gold-light)}
+        .casting-detail-block p{margin:0;color:var(--muted);font-size:.87rem;line-height:1.7;white-space:pre-line}
+        .casting-form{display:none;margin-top:25px;padding-top:24px;border-top:1px solid var(--line)}
+        .casting-form.visible{display:block}
+        .casting-form h3{font-family:'Playfair Display',serif;font-size:1.55rem;margin:0 0 6px}
+        .casting-form-intro,.casting-note{color:var(--muted);font-size:.8rem;line-height:1.6}
+        .casting-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+        .casting-field{display:grid;gap:6px;margin-bottom:12px}
+        .casting-field label{font-size:.8rem;font-weight:700}
+        .casting-field input,.casting-field textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#211e26;color:white;font:inherit;font-size:.86rem}
+        .casting-field input:focus,.casting-field textarea:focus{outline:2px solid rgba(201,168,78,.3);border-color:var(--gold)}
+        .casting-field textarea{min-height:90px;resize:vertical}
+        .casting-reasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0 18px}
+        .casting-reason{display:flex;gap:8px;align-items:flex-start;padding:11px;border:1px solid var(--line);border-radius:10px;font-size:.78rem;cursor:pointer}
+        .casting-reason input{accent-color:var(--gold);margin-top:4px}
+        .casting-alert{display:none;margin-top:12px;padding:12px;border-radius:10px;background:rgba(184,109,77,.15);color:#f0c2aa;font-size:.82rem}
+        .casting-alert.visible{display:block}
+        @media(max-width:700px){.casting-offers{grid-template-columns:1fr}.casting-form-grid,.casting-reasons,.casting-detail-grid{grid-template-columns:1fr}.casting-modal-head,.casting-modal-body{padding:20px}.casting-offer{padding:21px}}
+
         /* CONTACTO */
         .contact-toggle {
             width: 100%;
@@ -2167,7 +2216,7 @@
                     <div class="hero-card-inner">
                         <div class="hero-number">A</div>
                         <div>
-                            <div class="hero-quote">Identidad original.<br>Historias que nos unen.<br><span class="gold">Pasiones enormes.</span></div>
+                            <div class="hero-quote">Identidad original.<br>Historias que unen.<br><span class="gold">Pasiones enormes.</span></div>
                             <div class="hero-mini">Teatro independiente hecho en Córdoba, con artistas, autores y equipos que aman contar historias.</div>
                         </div>
                     </div>
@@ -2427,9 +2476,53 @@
                     </div>
                     <p class="section-intro">Publicamos castings y convocatorias para nuevos proyectos teatrales y audiovisuales. Si tenés ganas de actuar, crear y formar parte de nuevas historias, conocé las oportunidades disponibles.</p>
                 </div>
-                <div class="feature-grid" id="castingGrid"></div>
+                <div class="casting-filters" id="castingFilters" aria-label="Filtrar convocatorias">
+                    <button type="button" class="casting-filter active" data-casting-filter="Todas">Todas</button>
+                    <button type="button" class="casting-filter" data-casting-filter="Actuación">Actuación</button>
+                    <button type="button" class="casting-filter" data-casting-filter="Audiovisual">Audiovisual</button>
+                    <button type="button" class="casting-filter" data-casting-filter="Otros">Otros</button>
+                </div>
+                <div class="casting-offers" id="castingGrid"></div>
             </div>
         </section>
+
+        <div class="casting-modal-backdrop" id="castingModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="castingModalTitle">
+            <article class="casting-modal">
+                <div class="casting-modal-head">
+                    <button type="button" class="casting-close" id="castingModalClose" aria-label="Cerrar">×</button>
+                    <div class="casting-category" id="castingModalCategory">Convocatoria</div>
+                    <h2 id="castingModalTitle">Detalles de la convocatoria</h2>
+                    <p id="castingModalSummary"></p>
+                </div>
+                <div class="casting-modal-body">
+                    <div class="casting-detail-grid" id="castingModalData"></div>
+                    <div id="castingModalDetails"></div>
+                    <button type="button" class="btn btn-primary" id="castingShowForm">POSTULARME A ESTA OFERTA ↓</button>
+                    <form id="castingApplyForm" class="casting-form">
+                        <h3>Formulario de postulación</h3>
+                        <p class="casting-form-intro">Completá tus datos. Se preparará un mensaje para enviar a Apolo Creativo por WhatsApp.</p>
+                        <div class="casting-form-grid">
+                            <div class="casting-field"><label for="castingName">Nombre *</label><input id="castingName" name="nombre" required maxlength="80" autocomplete="given-name"></div>
+                            <div class="casting-field"><label for="castingSurname">Apellido *</label><input id="castingSurname" name="apellido" required maxlength="80" autocomplete="family-name"></div>
+                            <div class="casting-field"><label for="castingAge">Edad *</label><input id="castingAge" name="edad" type="number" min="1" max="110" required></div>
+                            <div class="casting-field"><label for="castingPhone">Teléfono con WhatsApp *</label><input id="castingPhone" name="telefono" type="tel" required maxlength="35" autocomplete="tel"></div>
+                            <div class="casting-field" style="grid-column:1/-1"><label for="castingEmail">Correo electrónico *</label><input id="castingEmail" name="email" type="email" required maxlength="120" autocomplete="email"></div>
+                        </div>
+                        <div class="casting-field"><label>Motivo del contacto * (elegí una opción)</label></div>
+                        <div class="casting-reasons">
+                            <label class="casting-reason"><input type="radio" name="motivo" value="Quiero postularme al casting" required><span>Quiero postularme al casting</span></label>
+                            <label class="casting-reason"><input type="radio" name="motivo" value="Quiero recibir más información"><span>Quiero recibir más información</span></label>
+                            <label class="casting-reason"><input type="radio" name="motivo" value="Quiero enviar mi CV o material artístico"><span>Quiero enviar mi CV o material artístico</span></label>
+                            <label class="casting-reason"><input type="radio" name="motivo" value="Quiero consultar por futuras convocatorias"><span>Quiero consultar por futuras convocatorias</span></label>
+                        </div>
+                        <div class="casting-field"><label for="castingMessage">Mensaje adicional (opcional)</label><textarea id="castingMessage" name="mensaje" maxlength="700" placeholder="Contanos algo más sobre vos o tu experiencia."></textarea></div>
+                        <button type="submit" class="btn btn-primary">ENVIAR AL WHATSAPP ↗</button>
+                        <p class="casting-note">WhatsApp se abrirá con el mensaje preparado. Tendrás que confirmar el envío. Esta página no guarda los datos enviados.</p>
+                        <div class="casting-alert" id="castingAlert" role="alert"></div>
+                    </form>
+                </div>
+            </article>
+        </div>
 
         <!-- SORTEOS -->
         <section class="section" id="sorteos">
@@ -2657,34 +2750,7 @@ Creemos en el trabajo colectivo, en la libertad creativa y en el poder del teatr
         const ticketedProductions = [
 
 
-            {
-                id: "buenos",
-                title: "Buenos vecinos",
-                image: "https://apolocreativo.site/img/BUENOS.webp?raw=true",
-                synopsis: "En el almacén de barrio, una compra cotidiana se transforma en una situación explosiva cuando Juanjo, apurado por sus obligaciones, queda envuelto en una inesperada acusación. Entre las anécdotas de Héctor, las teorías disparatadas de Elba y los secretos que esconden las relaciones de poder del barrio, lo que parecía un simple malentendido comienza a revelar viejas cuentas pendientes.",
-                description: "Buenos Vecinos es una comedia de enredos ambientada en un almacén de barrio, ese lugar donde siempre hay algo para comprar, alguien con quien conversar y, por supuesto, algún chisme que compartir. A través de personajes cotidianos, diálogos desopilantes y situaciones que crecen hasta alcanzar el absurdo, la obra retrata con ironía las pequeñas miserias de la convivencia, los prejuicios, las habladurías y la facilidad con la que una sospecha puede convertirse en una verdad indiscutible. El humor surge del contraste entre la urgencia de quien necesita seguir con su día y la tranquilidad de quienes parecen tener todo el tiempo del mundo para opinar sobre la vida ajena.\n\n Pero detrás de las risas también aparece una mirada crítica sobre la corrupción, los privilegios y las injusticias sociales. Cuando los vínculos entre los personajes salen a la luz, el almacén deja de ser un simple comercio para convertirse en un escenario donde las diferencias de poder quedan expuestas y la verdad adquiere un peso inesperado. Buenos Vecinos invita al público a reírse de las contradicciones humanas, reconocer situaciones que podrían suceder en cualquier barrio y preguntarse quiénes son realmente los buenos vecinos cuando las apariencias empiezan a desmoronarse.",
-                estado: "Entradas en venta",
-                genero: "Comedia",
-                duracion: "75 minutos",
-                sala: "Sala Vocos Lescano",
-                direccion: "Río Segundo (Cba)",
-                entradas: "Desde $10.000",
-                meta: "17 de Octubre",
-                functions: [
 
-                    {
-                        date: "2026-10-17",
-                        dateLabel: "Sábado 17 de Octubre",
-                        time: "21:00 h",
-                        venue: "Teatro · Córdoba Capital",
-                        price: 10000,
-                        available: 40,
-                        paymentLink: "https://link.mercadopago.com.ar/apolocreativo"
-                    },
-                    
-                ],
-                actors: ["Rita Lión", "Lolo Ramos", "Lili Quinteros", "Emme Ochoa"]
-            },
             {
                 id: "ruido",
                 title: "Un ruido en la línea",
@@ -2976,6 +3042,34 @@ description: "Los días que fueron nuestros es una obra teatral que transita ent
                 meta: "Comedia · Archivo Apolo",
                 functions: [],
                 actors: ["Lolo Ramos", "Giuliano Costadone", "Mariano Rosemberg", "Carla Restivo", "Mariana Guevara", "Carolina Olmedo", "Laura Charras", "Lenny Carter", "Natalia Trillo"]
+            },
+            {
+                id: "buenos",
+                title: "Buenos vecinos",
+                image: "https://apolocreativo.site/img/BUENOS.webp?raw=true",
+                synopsis: "En el almacén de barrio, una compra cotidiana se transforma en una situación explosiva cuando Juanjo, apurado por sus obligaciones, queda envuelto en una inesperada acusación. Entre las anécdotas de Héctor, las teorías disparatadas de Elba y los secretos que esconden las relaciones de poder del barrio, lo que parecía un simple malentendido comienza a revelar viejas cuentas pendientes.",
+                description: "Buenos Vecinos es una comedia de enredos ambientada en un almacén de barrio, ese lugar donde siempre hay algo para comprar, alguien con quien conversar y, por supuesto, algún chisme que compartir. A través de personajes cotidianos, diálogos desopilantes y situaciones que crecen hasta alcanzar el absurdo, la obra retrata con ironía las pequeñas miserias de la convivencia, los prejuicios, las habladurías y la facilidad con la que una sospecha puede convertirse en una verdad indiscutible. El humor surge del contraste entre la urgencia de quien necesita seguir con su día y la tranquilidad de quienes parecen tener todo el tiempo del mundo para opinar sobre la vida ajena.\n\n Pero detrás de las risas también aparece una mirada crítica sobre la corrupción, los privilegios y las injusticias sociales. Cuando los vínculos entre los personajes salen a la luz, el almacén deja de ser un simple comercio para convertirse en un escenario donde las diferencias de poder quedan expuestas y la verdad adquiere un peso inesperado. Buenos Vecinos invita al público a reírse de las contradicciones humanas, reconocer situaciones que podrían suceder en cualquier barrio y preguntarse quiénes son realmente los buenos vecinos cuando las apariencias empiezan a desmoronarse.",
+                estado: "Entradas en venta",
+                genero: "Comedia",
+                duracion: "75 minutos",
+                sala: "Sala Vocos Lescano",
+                direccion: "Río Segundo (Cba)",
+                entradas: "Desde $10.000",
+                meta: "17 de Octubre",
+                functions: [
+
+                    {
+                        date: "2026-10-17",
+                        dateLabel: "Sábado 17 de Octubre",
+                        time: "21:00 h",
+                        venue: "Teatro · Córdoba Capital",
+                        price: 10000,
+                        available: 40,
+                        paymentLink: "https://link.mercadopago.com.ar/apolocreativo"
+                    },
+                    
+                ],
+                actors: ["Rita Lión", "Lolo Ramos", "Lili Quinteros", "Emme Ochoa"]
             },
             {
                 id: "el-mecanico",
@@ -3300,22 +3394,72 @@ description: "Los días que fueron nuestros es una obra teatral que transita ent
             ["Lili Quinteros", "Actriz", "https://raw.githubusercontent.com/apolocreativook/apolo-web/refs/heads/main/img/liliana.webp", "Información en proceso..."]
         ];
 
-        /* CASTINGS */
-        const castings = [{
-                tag: "Hasta 10 de Noviembre",
-                title: "Casting · Próxima producción",
-                text: "Estamos buscando 2 hombres y 2 mujeres para formar parte de una nueva obra de teatro de comedia, con presentación prevista para noviembre/diciembre. “Un macho alfa domesticado” es una comedia que invita a reírnos de nosotros mismos y de esos distintos personajes, máscaras y disfraces que usamos para movernos en sociedad: lo que mostramos frente a los demás, lo que escondemos cuando estamos solos y la eterna contradicción entre quiénes creemos ser y quiénes realmente somos.",
-                list: ["Tener entre 25 y 35 años", "Disponibilidad para ensayos", "Residir en Córdoba o alrededores"],
-                button: "Participar del casting",
-                link: "https://casting.apolocreativo.site"
+        /* CASTINGS / CONVOCATORIAS */
+        const WHATSAPP_APOLO_CASTINGS = "5493517426042";
+        const castings = [
+            {
+                id: 1,
+                category: "Actuación",
+                tag: "Hasta 15 de noviembre",
+                status: "Convocatoria abierta",
+                title: "Casting · Antes de que me olvide",
+                text: "Buscamos 3 mujeres para formar parte de una nueva comedia dramática teatral de Apolo Creativo, con presentación prevista para abril de 2027.",
+                project: "Antes de que me olvide",
+                profiles: "Tres mujeres, de entre 18 y 23 años.",
+                requirements: "Tener entre 25 y 35 años.\nDisponibilidad para ensayos tarde-noche.\nResidir en Córdoba Capital o alrededores.",
+                conditions: "La convocatoria corresponde a una producción teatral independiente. Las condiciones específicas de participación se conversarán durante el proceso de selección.",
+                place: "Córdoba Capital",
+                date: "A coordinar",
+                closing: "Hasta el 15 de noviembre",
+                material: "Completá el formulario y contanos brevemente tu experiencia o interés actoral."
             },
             {
+                id: 2,
+                category: "Actuación",
+                tag: "Hasta 15 de noviembre",
+                status: "Convocatoria abierta",
+                title: "Casting · Antes de que me olvide",
+                text: "Buscamos 1 hombre para formar parte de una nueva comedia dramática teatral de Apolo Creativo, con presentación prevista para abril de 2027.",
+                project: "Antes de que me olvide",
+                profiles: "1 Hombre, de entre 23 y 26 años.",
+                requirements: "Tener entre 23 y 26 años.\nDisponibilidad para ensayos tarde-noche.\nResidir en Córdoba Capital o alrededores.",
+                conditions: "La convocatoria corresponde a una producción teatral independiente. Las condiciones específicas de participación se conversarán durante el proceso de selección.",
+                place: "Córdoba Capital",
+                date: "A coordinar",
+                closing: "Hasta el 15 de noviembre",
+                material: "Completá el formulario y contanos brevemente tu experiencia o interés actoral."
+            },
+            {
+                id: 3,
+                category: "Actuación",
+                tag: "Hasta 25 de noviembre",
+                status: "Convocatoria abierta",
+                title: "Casting · No se abre la puerta",
+                text: "Buscamos 2 hombres para formar parte de una nueva comedia teatral de Apolo Creativo, con presentación prevista para marzo de 2027.",
+                project: "No se abre la puerta después de las ocho",
+                profiles: "Dos hombres, de entre 20 y 55 años.",
+                requirements: "Tener entre 20 y 55 años.\nDisponibilidad para ensayos durante la tarde-noche.\nResidir en Córdoba Capital o alrededores.",
+                conditions: "La convocatoria corresponde a una producción teatral independiente. Las condiciones específicas de participación se conversarán durante el proceso de selección.",
+                place: "Córdoba Capital",
+                date: "A coordinar",
+                closing: "Hasta el 25 de noviembre",
+                material: "Completá el formulario y contanos brevemente tu experiencia o interés actoral."
+            },
+            {
+                id: 4,
+                category: "Actuación",
                 tag: "Convocatoria abierta",
-                title: "Casting · Nuevos talentos",
-                text: "Estamos en constante búsqueda de nuevos talentos para incorporar a nuestro banco de actores y actrices. La convocatoria está abierta tanto para personas con experiencia en teatro como para quienes quieran animarse a experimentar por primera vez el mundo de la actuación. Nuestro objetivo es conocer nuevos perfiles, descubrir talentos y contar con una base de artistas que podamos considerar para nuestras próximas producciones teatrales y audiovisuales. Si sentís que el escenario es tu lugar, si alguna vez quisiste actuar o simplemente tenés curiosidad por explorar ese mundo, nos encantaría conocerte.",
-                list: ["Actores y actrices con o sin experiencia", "Todos los perfiles", "Convocatorias durante todo el año"],
-                button: "Quiero participar",
-                link: "https://casting.apolocreativo.site"
+                status: "Convocatoria abierta",
+                title: "Casting · No se abre la puerta",
+                text: "Buscamos 1 mujer para formar parte de una nueva comedia teatral de Apolo Creativo, con presentación prevista para marzo de 2027.",
+                project: "No se abre la puerta después de las ocho",
+                profiles: "Una mujer, de entre 45 y 55 años.",
+                requirements: "Tener entre 20 y 55 años.\nDisponibilidad para ensayos durante la tarde-noche.\nResidir en Córdoba Capital o alrededores.",
+                conditions: "La convocatoria corresponde a una producción teatral independiente. Las condiciones específicas de participación se conversarán durante el proceso de selección.",
+                place: "Córdoba Capital",
+                date: "A coordinar",
+                closing: "Hasta el 25 de noviembre",
+                material: "Completá el formulario y contanos brevemente tu experiencia o interés actoral."
             }
         ];
 
@@ -3367,7 +3511,7 @@ description: "Los días que fueron nuestros es una obra teatral que transita ent
             const box = document.getElementById("productionList");
 
             const vigentesIds = [
-                "buenos",
+
                 "ruido",
                 "un-domingo",
 
@@ -3393,6 +3537,7 @@ description: "Los días que fueron nuestros es una obra teatral que transita ent
                 "el-casting",
                 "el-peor-evento",
                 "el-mecanico",
+                "buenos",
             ];
 
             const vigentes = allProductions.filter(p =>
@@ -3893,8 +4038,93 @@ function closeUpcomingModal() {
 
         /* CASTINGS Y SORTEOS */
         function renderFeatureCards() {
-            document.getElementById("castingGrid").innerHTML = castings.map(c => featureCard(c)).join("");
+            renderCastingOffers("Todas");
             document.getElementById("giveawayGrid").innerHTML = giveaways.map(c => featureCard(c)).join("");
+        }
+
+        function renderCastingOffers(filter = "Todas") {
+            const grid = document.getElementById("castingGrid");
+            const items = castings.filter(c => filter === "Todas" || (filter === "Otros" ? !["Actuación", "Audiovisual"].includes(c.category) : c.category === filter));
+            if (!items.length) {
+                grid.innerHTML = '<p class="casting-empty">No hay convocatorias en esta categoría por el momento.</p>';
+                return;
+            }
+            grid.innerHTML = items.map(c => `
+                <article class="casting-offer">
+                    <div class="casting-offer-top"><span class="casting-category">${escapeHtml(c.category)}</span><span class="casting-status">● ${escapeHtml(c.status)}</span></div>
+                    <h3>${escapeHtml(c.title)}</h3>
+                    <p>${escapeHtml(c.text)}</p>
+                    <div class="casting-meta"><span>⌖ ${escapeHtml(c.place)}</span><span>◷ Cierre: ${escapeHtml(c.closing)}</span></div>
+                    <div class="casting-offer-foot"><span class="casting-hint">Ver perfiles, requisitos y condiciones</span><button type="button" class="btn btn-primary" data-casting-id="${c.id}">VER OFERTA ↗</button></div>
+                </article>`).join("");
+        }
+
+        let currentCastingOffer = null;
+        let previousCastingFocus = null;
+        function openCastingOffer(id, trigger) {
+            const offer = castings.find(c => c.id === Number(id));
+            if (!offer) return;
+            currentCastingOffer = offer;
+            previousCastingFocus = trigger || document.activeElement;
+            document.getElementById("castingModalCategory").textContent = offer.category + " · " + offer.status;
+            document.getElementById("castingModalTitle").textContent = offer.title;
+            document.getElementById("castingModalSummary").textContent = offer.text;
+            document.getElementById("castingModalData").innerHTML = [["Proyecto",offer.project],["Lugar",offer.place],["Fecha / audición",offer.date],["Cierre",offer.closing]].map(([label,value]) => `<div class="casting-detail-cell"><small>${escapeHtml(label)}</small><strong>${escapeHtml(value)}</strong></div>`).join("");
+            document.getElementById("castingModalDetails").innerHTML = castingDetail("¿Qué perfiles buscamos?",offer.profiles) + castingDetail("Requisitos",offer.requirements) + castingDetail("Condiciones",offer.conditions) + castingDetail("Material para presentar",offer.material);
+            const form = document.getElementById("castingApplyForm");
+            form.reset(); form.classList.remove("visible");
+            document.getElementById("castingAlert").classList.remove("visible");
+            document.getElementById("castingModalBackdrop").classList.add("open");
+            document.body.style.overflow = "hidden";
+            document.getElementById("castingModalClose").focus();
+        }
+        function castingDetail(title, text) {
+            return `<section class="casting-detail-block"><h4>${escapeHtml(title)}</h4><p>${escapeHtml(text)}</p></section>`;
+        }
+        function closeCastingOffer() {
+            document.getElementById("castingModalBackdrop").classList.remove("open");
+            document.body.style.overflow = "";
+            if (previousCastingFocus && previousCastingFocus.focus) previousCastingFocus.focus();
+        }
+        function initCastingInteractions() {
+            const grid = document.getElementById("castingGrid");
+            if (!grid || grid.dataset.ready === "true") return;
+            grid.dataset.ready = "true";
+            grid.addEventListener("click", event => {
+                const button = event.target.closest("[data-casting-id]");
+                if (button) openCastingOffer(button.dataset.castingId, button);
+            });
+            document.getElementById("castingFilters").addEventListener("click", event => {
+                const button = event.target.closest("[data-casting-filter]");
+                if (!button) return;
+                document.querySelectorAll("[data-casting-filter]").forEach(b => b.classList.toggle("active", b === button));
+                renderCastingOffers(button.dataset.castingFilter);
+            });
+            document.getElementById("castingModalClose").addEventListener("click", closeCastingOffer);
+            document.getElementById("castingModalBackdrop").addEventListener("click", event => { if (event.target.id === "castingModalBackdrop") closeCastingOffer(); });
+            document.addEventListener("keydown", event => { if (event.key === "Escape" && document.getElementById("castingModalBackdrop").classList.contains("open")) closeCastingOffer(); });
+            document.getElementById("castingShowForm").addEventListener("click", () => {
+                const form = document.getElementById("castingApplyForm");
+                form.classList.add("visible");
+                form.scrollIntoView({behavior:"smooth",block:"start"});
+                document.getElementById("castingName").focus({preventScroll:true});
+            });
+            document.getElementById("castingApplyForm").addEventListener("submit", event => {
+                event.preventDefault();
+                const form = event.currentTarget;
+                if (!form.reportValidity() || !currentCastingOffer) return;
+                const data = new FormData(form);
+                const number = WHATSAPP_APOLO_CASTINGS.replace(/\D/g, "");
+                const alertBox = document.getElementById("castingAlert");
+                if (!number || number.length < 10) {
+                    alertBox.textContent = "Configurá el número correcto de WhatsApp de Apolo Creativo.";
+                    alertBox.classList.add("visible"); return;
+                }
+                const message = ["Hola, Apolo Creativo. Quiero postularme / consultar por una convocatoria.","","CONVOCATORIA: " + currentCastingOffer.title,"CATEGORÍA: " + currentCastingOffer.category,"","DATOS DE LA PERSONA","Nombre y apellido: " + data.get("nombre") + " " + data.get("apellido"),"Edad: " + data.get("edad"),"Teléfono con WhatsApp: " + data.get("telefono"),"Correo electrónico: " + data.get("email"),"Motivo: " + data.get("motivo"),"","Mensaje adicional: " + (data.get("mensaje") || "Sin mensaje adicional"),"","Enviado desde la web de Apolo Creativo."].join("\n");
+                const url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+                const popup = window.open(url, "_blank", "noopener,noreferrer");
+                if (!popup) { alertBox.textContent = "El navegador bloqueó la ventana emergente. Permití las ventanas emergentes e intentá nuevamente."; alertBox.classList.add("visible"); }
+            });
         }
 
         function featureCard(c) {
@@ -4128,6 +4358,7 @@ ${message}`;
             initTicketera();
             renderActors();
             renderFeatureCards();
+        initCastingInteractions();
             setupContactForm();
         });
 
