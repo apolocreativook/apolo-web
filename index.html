@@ -2161,6 +2161,109 @@
     }
 }
 
+
+        /* BANNER DE ENTRADAS APOLO */
+        .entradas-banner {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 75px 30px;
+            text-align: center;
+            border: 1px solid rgba(201, 168, 78, .28);
+            border-radius: 24px;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(120, 83, 145, .20), transparent 65%),
+                linear-gradient(135deg, #17151b, #0e0e11 75%);
+        }
+
+        .entradas-contenido {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .entradas-etiqueta {
+            display: block;
+            margin-bottom: 22px;
+            color: var(--gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .entradas-banner h2 {
+            margin: 0 0 22px;
+            color: #f7f4ef;
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .entradas-banner h2 span {
+            color: var(--gold-light);
+        }
+
+        .entradas-banner p {
+            max-width: 540px;
+            margin: 0 auto 30px;
+            color: #c5c0cb;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .entradas-boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            padding: 16px 25px;
+            border-radius: 8px;
+            background: var(--gold-light);
+            color: #17130b;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .8px;
+            text-decoration: none;
+            transition: transform .25s, background .25s;
+        }
+
+        .entradas-boton:hover {
+            background: #ebcd7a;
+            transform: translateY(-3px);
+        }
+
+        .entradas-pie {
+            margin-top: 27px;
+            color: #a9a3af;
+            font-size: 12px;
+            letter-spacing: .4px;
+        }
+
+        .entradas-pie span {
+            margin-right: 6px;
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 600px) {
+            .entradas-banner {
+                padding: 52px 22px;
+                border-radius: 18px;
+            }
+
+            .entradas-etiqueta {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .entradas-banner h2 {
+                letter-spacing: -.8px;
+            }
+
+            .entradas-banner p {
+                font-size: 14px;
+            }
+        }
+
     </style>
 </head>
 
@@ -2208,7 +2311,7 @@
                         queremos que el público salga con una experiencia para recordar.
                     </p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#ticketera">Ver funciones</a>
+                        <a class="btn btn-primary" href="https://tickets.apolocreativo.site/">Ver funciones</a>
                         <a class="btn btn-secondary" href="#producciones">Conocer Apolo</a>
                     </div>
                 </div>
@@ -2238,220 +2341,29 @@
             </div>
         </section>
 
-        <!-- TICKETERA -->
-        <section class="section" id="ticketera">
+        <!-- BANNER DE ENTRADAS -->
+        <section class="section" id="entradas">
             <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Ticketera Apolo</div>
-                        <h2>Tu próxima salida empieza acá.</h2>
-                    </div>
-                    <p class="section-intro">Elegí la obra, seleccioná la función y prepará tu próxima experiencia teatral. En pocos pasos vas a tener todo listo para disfrutar del espectáculo.</p>
-                </div>
-
-                <div class="ticket-wrap">
-                    <div class="ticket-grid">
-                        <div class="ticket-panel">
-                            <div class="summary-title">01 · Elegí tu función</div>
-
-                            <div class="field">
-                                <label for="ticketProduction">Obra</label>
-                                <select id="ticketProduction" onchange="updateTicketDates()"></select>
-                            </div>
-
-                            <div class="field">
-                                <label for="ticketDate">Función / fecha</label>
-                                <select id="ticketDate" onchange="updateTicketSummary()"></select>
-                            </div>
-
-                            <div class="qty-row">
-                                <div>
-                                    <strong>Cantidad de entradas</strong>
-                                    <div class="ticket-availability" id="availability">Seleccioná una función.</div>
-                                </div>
-                                <div class="qty-control">
-                                    <button onclick="changeQty(-1)">−</button>
-                                    <span id="ticketQty">1</span>
-                                    <button onclick="changeQty(1)">+</button>
-                                </div>
-                            </div>
-
-                            <button class="btn btn-primary" style="width:100%;margin-top:20px" onclick="prepareOrder()">Continuar al pago</button>
-                            <div style="margin-top:12px;text-align:center;color:#88828e;font-size:.72rem;line-height:1.5">
-                                💳 Las compras realizadas online mediante Mercado Pago
-                                incluyirán un <strong style="color:var(--gold-light)">porcentaje según el medio de pago que se elija</strong>.
-                            </div>
-
-                            <div class="ticket-status" id="ticketStatus">
-                                <div class="summary-title">Orden preparada</div>
-                                <h3>Tu butaca te está esperando.</h3>
-                                <div id="orderDetails" style="margin-top:12px"></div>
-
-                                <center><a id="paymentButton" class="btn btn-primary" href="https://link.mercadopago.com.ar/apolocreativo" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px">
-                                        Abrir Mercado Pago
-                                    </a></center>
-
-                                <div class="qr-box" id="qrBox"></div>
-                                <div class="qr-label">Escaneá para pagar</div>
-                                <div class="ticket-id" id="ticketId"></div>
-
-                                <div class="payment-note">
-                                    El monto a cobrar puede configurarse directamente desde la app de Mercado Pago. Al seleccionar esta opción, el navegador generará el código QR y preparará la orden de pago.
-                                    Para validar el pago y registrar correctamente a los asistentes, es necesario enviarnos un mensaje con los nombres de todas las personas que asistirán. En caso de no recibir esta información, el pago se registrará automáticamente por la cantidad de asistentes asociada al mismo nombre de la cuenta de Mercado Pago desde la cual se realizó el pago.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ticket-panel">
-                            <div class="summary-title">02 · Revisá tu compra</div>
-                            <div class="summary-main" id="summaryProduction">Elegí una obra</div>
-                            <div class="summary-line" id="summaryDate">—</div>
-                            <div class="summary-line" id="summaryVenue">—</div>
-                            <div class="summary-line" id="summaryQty">—</div>
-
-                            <div style="margin-top:20px;padding-top:15px;border-top:1px solid var(--line)">
-
-                                <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin:6px 0">
-                                    <span>Subtotal</span>
-                                    <strong id="summarySubtotal">$ 0</strong>
-                                </div>
-
-                                <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin:6px 0">
-                                    <span>Costo de servicio (15%)</span>
-                                    <strong id="summaryServiceFee">$ 0</strong>
-                                </div>
-
-                                <div class="total" style="margin-top:15px">
-                                    <span>Total</span>
-                                    <strong id="summaryTotal">$ 0</strong>
-                                </div>
-
-                            </div>
-
-
-                            <div style="margin-top:10px;text-align:right;color:#88828e;font-size:.72rem;line-height:1.5">
-                                El total incluye un <strong style="color:var(--gold-light)">15% de costo de servicio</strong>
-                                correspondiente a la gestión de la compra online mediante Mercado Pago.
-                            </div>
-
-                            <div style="margin-top:35px;padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02)">
-                                <div class="eyebrow">Cómo funciona</div>
-                                <p style="color:var(--muted);line-height:1.7;font-size:.86rem">
-                                    1. Elegís obra y función.<br>
-                                    2. Indicás cuántas entradas querés.<br>
-                                    3. Revisás el resumen.<br>
-                                    4. Abrís Mercado Pago.<br>
-                                    5. El sistema definitivo puede confirmar el pago y generar un QR único de acceso.
-                                </p>
-                            </div>
-                        </div>
+                <div class="entradas-banner">
+                    <div class="entradas-contenido">
+                        <span class="entradas-etiqueta">APOLO CREATIVO · TEATRO INDEPENDIENTE</span>
+                        <h2>Hay historias que<br>merecen <span>ser vividas.</span></h2>
+                        <p>
+                            Elegí tu próxima obra, encontrá tu función y asegurá tus entradas
+                            para vivir el teatro desde otro lugar.
+                        </p>
+                        <a class="entradas-boton"
+                           href="https://tickets.apolocreativo.site/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            EXPLORAR CARTELERA <span aria-hidden="true">↗</span>
+                        </a>
+                        <div class="entradas-pie"><span aria-hidden="true">✦</span> Tu próxima historia empieza acá.</div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- TRANSFERENCIA -->
-        <section class="section transfer-section" id="transferencia">
-            <div class="container">
 
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Abonar con transferencia</div>
-                        <h2>Pagá tus entradas por transferencia</h2>
-                    </div>
-
-                    <p class="section-intro">
-                        También podés abonar tus entradas mediante una transferencia directa. Al elegir esta modalidad, el monto abonado no incluye el 15% correspondiente al costo de servicio.
-                    </p>
-                </div>
-
-                <div class="transfer-box">
-
-                    <button class="transfer-toggle" onclick="toggleTransfer(this)">
-                        <span>＋ Descubrir datos</span>
-                    </button>
-
-                    <div class="transfer-details">
-
-                        <div class="transfer-data">
-
-                            <div class="transfer-row">
-                                <div>
-                                    <span class="transfer-label">Alias</span>
-                                    <strong>apolo.creativo</strong>
-                                </div>
-
-                                <button class="copy-button" onclick="copyTransferData('apolo.creativo', this)">
-                                    Copiar
-                                </button>
-                            </div>
-
-                            <div class="transfer-row">
-                                <div>
-                                    <span class="transfer-label">CVU</span>
-                                    <strong>0000003100036611862098</strong>
-                                </div>
-
-                                <button class="copy-button" onclick="copyTransferData('0000003100036611862098', this)">
-                                    Copiar
-                                </button>
-                            </div>
-
-                            <div class="transfer-row">
-                                <div>
-                                    <span class="transfer-label">Titular</span>
-                                    <strong>Juan Manuel (Lolo) Ramos</strong>
-                                </div>
-                            </div>
-
-                            <div class="transfer-row">
-                                <div>
-                                    <span class="transfer-label">CUIL / CUIT</span>
-                                    <strong>20-34024409-6</strong>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="transfer-instructions">
-
-                            <h3>¿Qué hago después de transferir?</h3>
-
-                            <p>
-                                Una vez realizada la transferencia correspondiente a tus entradas,
-                                escribinos por WhatsApp para enviarnos el comprobante y los nombres
-                                de las personas que van a asistir.
-                            </p>
-
-                            <p>
-                                Esto nos permite registrar correctamente tu compra y preparar tus
-                                entradas para la función.
-                            </p>
-
-                            <p>
-                                <strong>Importante:</strong> si no enviás el comprobante y los nombres
-                                de los asistentes, las entradas se contabilizarán según el monto
-                                recibido y quedarán registradas a nombre de la persona titular de
-                                la cuenta desde la que se realizó la transferencia.
-                            </p>
-
-                            <p class="transfer-example">
-                                <strong>Ejemplo:</strong> si se transfirió el importe correspondiente
-                                a 2 entradas y la cuenta está a nombre de Juan Pérez, en boletería
-                                deberán presentarse indicando <strong>Juan Pérez x 2</strong>.
-                            </p>
-
-                            <a href="https://wa.me/5493517426042?text=13" target="_blank" rel="noopener noreferrer" class="transfer-whatsapp">
-                                💬 Enviar comprobante por WhatsApp
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
         <!-- ACTORES -->
         <section class="section" id="actores">
             <div class="container">
@@ -3723,7 +3635,7 @@ description: "Los días que fueron nuestros es una obra teatral que transita ent
               `
                 <a
                   class="btn btn-primary"
-                  href="#ticketera"
+                  href="https://tickets.apolocreativo.site/"
                   style="display:inline-block;margin-top:17px;font-size:.78rem"
                 >
                   Ver funciones
@@ -3951,6 +3863,7 @@ function closeUpcomingModal() {
         /* TICKETERA */
         function initTicketera() {
             const select = document.getElementById("ticketProduction");
+            if (!select) return; // La compra ahora se realiza en la ticketera independiente.
             select.innerHTML = ticketedProductions.map(p => `<option value="${p.id}">${escapeHtml(p.title)}</option>`).join("");
             updateTicketDates();
         }
